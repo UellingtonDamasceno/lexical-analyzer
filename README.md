@@ -10,7 +10,7 @@
 
 ## Estrutura Léxica
 
-| Descrição | Token |
+| Descrição | Lexema |
 | ----------| ----- |
 | Palavras resevadas| `var` `const` `typedef` `struct` `extends` `procedure` `function` `start` `return` `if` `else` `then` `while` `read` `print` `int` `real` `boolean` `string` `true` `false` `global` `local` |
 | Indentificadores | letra ( letra \| dígito \| `_` )* |
