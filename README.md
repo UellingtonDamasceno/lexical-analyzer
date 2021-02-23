@@ -18,9 +18,9 @@
 | Dígito | [0-9] |
 | Operadores aritiméticos | `+` `-` `*` `/` `++`  `--` |
 | Operadores relacionais | `==` `!=` `>` `>=` `<` `<=` `=` |
-| Operadores lógicos | `&&` `||` `!` |
+| Operadores lógicos | `&&` `\|\|` `!` |
 | Delimitadores de comentário | `//` Isto é um comentário de linha </br> `/*` Isto é um comentário de bloco `*/` |
-| Cadeia de caracteres | "( letra \| dígito \| símbolo \| " )* " |
+| Cadeia de caracteres | "( letra \| dígito \| símbolo \| \\" )* " |
 | Símbolo | ASCII de 32 a 126 (exceto ASCII 34) |
 
 ## Entrada
