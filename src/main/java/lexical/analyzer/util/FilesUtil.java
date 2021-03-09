@@ -6,6 +6,7 @@ import java.nio.file.Path;
 import static java.nio.file.StandardOpenOption.CREATE;
 import static java.nio.file.StandardOpenOption.TRUNCATE_EXISTING;
 import static java.nio.file.StandardOpenOption.WRITE;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -14,28 +15,27 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
-import java.util.stream.Stream;
 import lexical.analyzer.main.Main;
 
 /**
  *
- * @author Uellington Damasceno
+ * @author Antonio Neto e Uellington Damasceno
  */
 public class FilesUtil {
 
-    public static Map<Path, List<String>> readAllFiles(Path path) throws IOException {
-        return Files.walk(path)
-                .filter(p -> p.toString().endsWith(".txt"))
-                .collect(toMap(Function.identity(), (p) -> readLines(p).collect(toList())));
+    public static Map<Path, List<String>> readAllFiles(Path path, String extension) throws IOException {
+        return Files.list(path)
+                .filter(p -> p.toString().endsWith(extension))
+                .collect(toMap(Function.identity(), FilesUtil::getLines));
     }
-    
-    public static Stream<String> readLines(Path path) {
+
+    public static List<String> getLines(Path path) {
         try {
-            return Files.lines(path);
+            return Files.lines(path).collect(toList());
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        return Stream.empty();
+        return new LinkedList();
     }
 
     public static void write(Entry<Path, List<String>> files) {
@@ -46,7 +46,8 @@ public class FilesUtil {
         try {
             Files.write(fileName, lines, CREATE, TRUNCATE_EXISTING, WRITE);
         } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.class
+                    .getName()).log(Level.SEVERE, null, ex);
         }
     }
 
