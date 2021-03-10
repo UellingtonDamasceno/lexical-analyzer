@@ -12,19 +12,19 @@ import java.util.Map.Entry;
 public class Cursor {
 
     private int line;
-    private int collumn;
+    private int column;
     private int counter;
     private int chars;
 
     private Map<Integer, String> lines;
-    private final Deque<Entry<Integer, Integer>> stack;
+    private Deque<Entry<Integer, Integer>> stack;
 
     public Cursor(SourceCode code) {
         this.lines = code.getNumberedLines();
         this.line = 0;
-        this.collumn = 0;
+        this.column = 0;
         this.counter = 0;
-        this.chars = code.getCharNumber();
+        this.chars = code.getTextContent().length();
         this.stack = new ArrayDeque();
     }
 
@@ -32,12 +32,16 @@ public class Cursor {
         return this.line;
     }
 
-    public int collumn() {
-        return this.collumn;
+    public int column() {
+        return this.column;
+    }
+
+    public int chars() {
+        return this.chars;
     }
 
     public void pushPostion() {
-        this.stack.push(Map.entry(line, collumn));
+        this.stack.push(Map.entry(line, column));
     }
 
     public Entry<Integer, Integer> popPosition() {
@@ -45,30 +49,31 @@ public class Cursor {
     }
 
     public char previousChar() {
-        if (this.collumn == 0 && this.line > 0) {
+        if (this.column == 0 && this.line > 0) {
             counter--;
             line--;
-            collumn = this.lines.get(line).length() - 1;
-            return this.get(line, collumn);
-        } else if (this.collumn == 0 && this.line == 0) {
+            column = this.lines.get(line).length() - 1;
+            return this.get(line, column);
+        } else if (this.column == 0 && this.line == 0) {
             return (char) 2;
         } else {
             counter--;
-            return this.get(line, --collumn);
+            return this.get(line, --column);
         }
     }
 
     public char nextChar() {
         String currentLine = this.lines.get(line);
-        if (this.collumn < currentLine.length()) {
+        if (this.column < currentLine.length()) {
             this.counter++;
-            return this.get(line, collumn++);
-        } else if (this.collumn == currentLine.length() && this.line < this.lines.size()) {
+            return this.get(line, column++);
+        } else if (this.column == currentLine.length() && this.line < this.lines.size() - 1) {
             this.counter++;
             line++;
-            collumn = 0;
-            return this.get(line, collumn++);
+            column = 0;
+            return this.get(line, column++);
         } else {
+            this.counter++;
             return (char) 3;
         }
     }
@@ -80,7 +85,7 @@ public class Cursor {
     }
 
     public char currentChar() {
-        return this.get(line, collumn);
+        return this.get(line, column);
     }
 
     public char showNext() {
@@ -99,21 +104,29 @@ public class Cursor {
 
     public void reset() {
         this.line = 0;
-        this.collumn = 0;
+        this.column = 0;
+        this.counter = 0;
+        var iterator = this.stack.iterator();
+        while (iterator.hasNext()) {
+            iterator.remove();
+        }
     }
 
     public void end() {
         this.line = this.lines.size() - 1;
-        this.collumn = this.lines.get(this.line).length();
+        this.column = this.lines.get(this.line).length();
         this.counter = this.chars;
     }
 
-    public void goTo(Entry<Integer, Integer> pos) {
-        this.line = pos.getKey();
-        this.collumn = pos.getValue();
+    public Entry<Integer, Integer> getPosition(int charPosition) {
+        this.reset();
+        while (this.counter < charPosition - 1) {
+            this.nextChar();
+        }
+        return Map.entry(line, column);
     }
 
-    private char get(int line, int collumn) {
-        return this.lines.get(line).charAt(collumn);
+    private char get(int line, int column) {
+        return this.lines.get(line).charAt(column);
     }
 }

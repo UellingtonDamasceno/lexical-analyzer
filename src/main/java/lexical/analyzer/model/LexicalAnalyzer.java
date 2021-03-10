@@ -2,6 +2,8 @@ package lexical.analyzer.model;
 
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import lexical.analyzer.util.Automatons;
 
 /**
  *
@@ -21,8 +23,19 @@ public class LexicalAnalyzer {
     }
 
     public void start() {
-        while (cursor.hasNext()) {
-            System.out.println(cursor.nextChar());
-        }
+        Automatons.getAutomatons()
+                .stream()
+                .forEach(entry -> {
+                    String content = code.getTextContent();
+                    Matcher matcher = entry.getValue().matcher(content);
+                    while (matcher.find()) {
+                        var pos = this.cursor.getPosition(matcher.start());
+                        var lexame = new Lexame(matcher.group(), pos.getKey(), pos.getValue());
+                        Token token = entry.getKey().getToken(lexame);
+                        tokens.add(token);
+                    }
+                });
+        tokens.forEach(System.out::println);
     }
+
 }
