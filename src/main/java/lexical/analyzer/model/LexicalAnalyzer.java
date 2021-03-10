@@ -1,7 +1,10 @@
 package lexical.analyzer.model;
 
+import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -26,10 +29,10 @@ public class LexicalAnalyzer {
         this.tokens = new TreeSet();
     }
 
-    public void start() {
-        Deque<String> stack = new ArrayDeque(); 
+    public Entry<Path, Set<Token>> analyze() {
+        Deque<String> stack = new ArrayDeque(1);
         stack.push(code.getTextContent());
-        
+
         Automatons.getAutomatons()
                 .stream()
                 .forEach(entry -> {
@@ -53,6 +56,8 @@ public class LexicalAnalyzer {
                     }
                     stack.push(replacedContent);
                 });
-        tokens.forEach(System.out::println);
+//        tokens.forEach(System.out::println);
+        return Map.entry(code.getPath(), this.tokens);
     }
+
 }

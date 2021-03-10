@@ -1,13 +1,16 @@
 package lexical.analyzer.main;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Map;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static java.util.stream.Collectors.toList;
 import lexical.analyzer.model.LexicalAnalyzer;
 import lexical.analyzer.model.SourceCode;
+import lexical.analyzer.model.Token;
 import lexical.analyzer.util.FilesUtil;
 
 /**
@@ -27,6 +30,7 @@ public class Main {
         };
 
         try {
+            Files.createDirectory(Path.of("./output")); 
             FilesUtil.readAllFiles(Path.of("./input"), ".txt")
                     .entrySet()
                     .stream()
@@ -34,7 +38,22 @@ public class Main {
                     .sorted()
                     .map(removeBlankLines)
                     .map(LexicalAnalyzer::new)
-                    .forEach(LexicalAnalyzer::start);
+                    .map(LexicalAnalyzer::analyze)
+                    .map((entry) -> {
+                        Path path = Path.of(entry.getKey()
+                                .toString()
+                                .replaceAll("input", "output")
+                                .replaceAll("entrada", "saida"));
+                        return Map.entry(path, entry.getValue());
+                    })
+                    .map((entry) -> {
+                        var tokens = entry.getValue()
+                                .stream()
+                                .map(Token::toString)
+                                .collect(toList());
+                        return Map.entry(entry.getKey(), tokens);
+                    })
+                    .forEach(FilesUtil::write);
         } catch (IOException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }

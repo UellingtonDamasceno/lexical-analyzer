@@ -38,8 +38,10 @@ public class FilesUtil {
         return new LinkedList();
     }
 
-    public static void write(Entry<Path, List<String>> files) {
-        FilesUtil.write(files.getKey(), files.getValue());
+    public static void write(Entry<Path, List<String>> file) {
+        Path key = file.getKey();
+        
+        FilesUtil.write(key, file.getValue());
     }
 
     public static void write(Path fileName, List<String> lines) {
