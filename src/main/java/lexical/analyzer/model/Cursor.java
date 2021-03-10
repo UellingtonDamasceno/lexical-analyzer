@@ -1,9 +1,13 @@
 package lexical.analyzer.model;
 
+import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 
 /**
  *
@@ -16,7 +20,7 @@ public class Cursor {
     private int counter;
     private int chars;
 
-    private Map<Integer, String> lines;
+    private Map<Integer, List<String>> lines;
     private Deque<Entry<Integer, Integer>> stack;
 
     public Cursor(SourceCode code) {
@@ -26,6 +30,36 @@ public class Cursor {
         this.counter = 0;
         this.chars = code.getTextContent().length();
         this.stack = new ArrayDeque();
+    }
+
+    public static String replaceOccurence(String content, int start, int end, String newChar) {
+        SourceCode code = new SourceCode(Path.of(""), content.lines().collect(toList()));
+        Cursor cursor = new Cursor(code);
+        
+        for (int i = 0; i < end; i++) {
+            if (i >= start) {
+                cursor.replace(newChar);
+            }
+            cursor.nextChar();
+        }
+        return cursor.getContent();
+    }
+
+    private void replace(String newChar) {
+        if (column < lines.get(line).size()) {
+            List<String> chars = lines.remove(line);
+            chars.set(column, newChar);
+            lines.put(line, chars);
+        }
+    }
+
+    public String getContent() {
+        return lines.entrySet()
+                .stream()
+                .sorted(Map.Entry.comparingByKey())
+                .map(entry -> entry.getValue().stream())
+                .map(stream -> stream.collect(Collectors.joining()))
+                .collect(Collectors.joining("\n"));
     }
 
     public int line() {
@@ -48,48 +82,48 @@ public class Cursor {
         return this.stack.pop();
     }
 
-    public char previousChar() {
+    public String previousChar() {
         if (this.column == 0 && this.line > 0) {
             counter--;
             line--;
-            column = this.lines.get(line).length() - 1;
+            column = this.lines.get(line).size() - 1;
             return this.get(line, column);
         } else if (this.column == 0 && this.line == 0) {
-            return (char) 2;
+            return "STX";
         } else {
             counter--;
             return this.get(line, --column);
         }
     }
 
-    public char nextChar() {
-        String currentLine = this.lines.get(line);
-        if (this.column < currentLine.length()) {
+    public String nextChar() {
+        List<String> currentLine = this.lines.get(line);
+        if (this.column < currentLine.size()) {
             this.counter++;
             return this.get(line, column++);
-        } else if (this.column == currentLine.length() && this.line < this.lines.size() - 1) {
+        } else if (this.column == currentLine.size() && this.line < this.lines.size() - 1) {
             this.counter++;
             line++;
             column = 0;
-            return this.get(line, column++);
+            return this.get(line, column);
         } else {
             this.counter++;
-            return (char) 3;
+            return "ETX";
         }
     }
 
-    public char showPrevious() {
-        char previousChar = this.previousChar();
+    public String showPrevious() {
+        String previousChar = this.previousChar();
         this.nextChar();
         return previousChar;
     }
 
-    public char currentChar() {
+    public String currentChar() {
         return this.get(line, column);
     }
 
-    public char showNext() {
-        char next = this.nextChar();
+    public String showNext() {
+        String next = this.nextChar();
         this.previousChar();
         return next;
     }
@@ -114,7 +148,7 @@ public class Cursor {
 
     public void end() {
         this.line = this.lines.size() - 1;
-        this.column = this.lines.get(this.line).length();
+        this.column = this.lines.get(this.line).size();
         this.counter = this.chars;
     }
 
@@ -126,7 +160,7 @@ public class Cursor {
         return Map.entry(line, column);
     }
 
-    private char get(int line, int column) {
-        return this.lines.get(line).charAt(column);
+    private String get(int line, int column) {
+        return this.lines.get(line).get(column);
     }
 }

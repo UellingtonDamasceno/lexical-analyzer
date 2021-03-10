@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import java.util.function.Function;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.summingInt;
+import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 import java.util.stream.Stream;
 
@@ -37,10 +38,12 @@ public class SourceCode implements Comparable<SourceCode> {
         return Collections.unmodifiableList(this.lines);
     }
 
-    public Map<Integer, String> getNumberedLines() {
+    public Map<Integer, List<String>> getNumberedLines() {
         return Stream.iterate(0, i -> i + 1)
                 .limit(lines.size())
-                .collect(toMap(Function.identity(), index -> lines.get(index)));
+                .collect(toMap(Function.identity(), (index) -> {
+                    return lines.get(index).chars().mapToObj(c -> Character.toString(c)).collect(toList());
+                }));
     }
 
     public int getCharNumber() {
