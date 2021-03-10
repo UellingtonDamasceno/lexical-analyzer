@@ -1,0 +1,11 @@
+var_ v4r variavel var_iavel vari4v3l
+const_ c0st constante const_ante c0n5t4nt3
+
+typedef_ struct_ extends_ procedure_ function_
+start_ return_ if_ else_ then_ while_ read_ print_ int_
+real_ boolean_ string_ true_ false_ global_ local_
+
+varvar constconst thenthen readread printprintprint
+ifififififififififififif
+if_if_if_if_if_if_if_if_if_if
+

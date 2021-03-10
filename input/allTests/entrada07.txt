@@ -1,0 +1,8 @@
+var = const
+typedef != typedef
+> struct <
+retrun <= 
+= = = = = = >  > > > < < < < < > > > < > > < >
+local != != !=
+> = >= >= = <=
+
