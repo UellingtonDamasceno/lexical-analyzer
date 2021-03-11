@@ -21,7 +21,7 @@ public class Automatons {
             TokenType.IDENTIFIER, Pattern.compile("[a-zA-Z](\\w|_)*"),
             TokenType.RESERVED, Pattern.compile(ReservedWords.getWords().stream().collect(joining("|", "\\b(", ")\\b"))),
             TokenType.ARITHMETIC, Pattern.compile("(\\*|/)|(\\+\\+?|--?)"),
-            TokenType.NUMBER, Pattern.compile("\\d+(.\\d+)?"),
+            TokenType.NUMBER, Pattern.compile("\\d+(\\.\\d+)?"),
             TokenType.RELATIONAL, Pattern.compile("([=><]=?)|!="),
             TokenType.LOGICAL, Pattern.compile("(&&|\\|\\||!)"),
             TokenType.DELIMITER, Pattern.compile("[;,\\(\\)\\{\\}\\[\\]\\.]")

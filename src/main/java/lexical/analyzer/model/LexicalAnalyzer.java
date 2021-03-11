@@ -3,6 +3,8 @@ package lexical.analyzer.model;
 import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.Deque;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -32,7 +34,7 @@ public class LexicalAnalyzer {
     public Entry<Path, Set<Token>> analyze() {
         Deque<String> stack = new ArrayDeque(1);
         stack.push(code.getTextContent());
-
+        List<Entry<Integer, Integer>> ocurrences = new LinkedList();
         Automatons.getAutomatons()
                 .stream()
                 .forEach(entry -> {
@@ -45,14 +47,20 @@ public class LexicalAnalyzer {
                         int start = matcher.start();
                         int end = matcher.end();
 
+                        ocurrences.add(Map.entry(start, end));
+
                         TokenType tokenType = entry.getKey();
                         var pos = cursor.getPosition(start);
 
                         Lexame lexame = new Lexame(matcher.group(), pos.getKey(), pos.getValue());
                         Token token = tokenType.getToken(lexame);
 
-                        replacedContent = Cursor.replaceOccurence(replacedContent, start, end, " ");
+//                        replacedContent = Cursor.replaceOccurence(replacedContent, start, end, " ");
                         tokens.add(token);
+                    }
+                    if (!ocurrences.isEmpty()) {
+                        replacedContent = Cursor.replaceOccurence(replacedContent, ocurrences, " ");
+                        ocurrences.clear();
                     }
                     stack.push(replacedContent);
                 });

@@ -1,5 +1,6 @@
 package lexical.analyzer.main;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,7 +31,10 @@ public class Main {
         };
 
         try {
-            Files.createDirectory(Path.of("./output")); 
+            File outputDirectory = new File("./output");
+            if (!outputDirectory.exists()) {
+                outputDirectory.createNewFile();
+            }
             FilesUtil.readAllFiles(Path.of("./input"), ".txt")
                     .entrySet()
                     .stream()

@@ -13,9 +13,9 @@ public enum TokenType {
     STRING("CAD"),
     RESERVED("PRE"),
     IDENTIFIER("IDE"),
+    RELATIONAL("REL"),
     NUMBER("NRO"),
     ARITHMETIC("ART"),
-    RELATIONAL("REL"),
     LOGICAL("LOG"),
     DELIMITER("DEL");
 

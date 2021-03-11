@@ -6,7 +6,7 @@ import java.util.Deque;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -32,10 +32,27 @@ public class Cursor {
         this.stack = new ArrayDeque();
     }
 
+    public static String replaceOccurence(String content, List<Entry<Integer, Integer>> occurences, String newChar) {
+        SourceCode code = new SourceCode(Path.of(""), content.lines().collect(toList()));
+        Cursor cursor = new Cursor(code);
+        occurences.forEach(ocurrence -> {
+            Integer start = ocurrence.getKey();
+            Integer end = ocurrence.getValue();
+            for (int i = cursor.counter; i < end; i++) {
+                if (i >= start) {
+                    cursor.replace(newChar);
+                }
+                cursor.nextChar();
+            }
+        });
+
+        return cursor.getContent();
+    }
+
     public static String replaceOccurence(String content, int start, int end, String newChar) {
         SourceCode code = new SourceCode(Path.of(""), content.lines().collect(toList()));
         Cursor cursor = new Cursor(code);
-        
+
         for (int i = 0; i < end; i++) {
             if (i >= start) {
                 cursor.replace(newChar);
@@ -47,9 +64,9 @@ public class Cursor {
 
     private void replace(String newChar) {
         if (column < lines.get(line).size()) {
-            List<String> chars = lines.remove(line);
-            chars.set(column, newChar);
-            lines.put(line, chars);
+            List<String> tempChars = lines.remove(line);
+            tempChars.set(column, newChar);
+            lines.put(line, tempChars);
         }
     }
 
@@ -58,8 +75,8 @@ public class Cursor {
                 .stream()
                 .sorted(Map.Entry.comparingByKey())
                 .map(entry -> entry.getValue().stream())
-                .map(stream -> stream.collect(Collectors.joining()))
-                .collect(Collectors.joining("\n"));
+                .map(stream -> stream.collect(joining()))
+                .collect(joining("\n"));
     }
 
     public int line() {
