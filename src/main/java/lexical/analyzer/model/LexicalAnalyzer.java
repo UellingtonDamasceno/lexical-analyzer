@@ -55,7 +55,6 @@ public class LexicalAnalyzer {
                         Lexame lexame = new Lexame(matcher.group(), pos.getKey(), pos.getValue());
                         Token token = tokenType.getToken(lexame);
 
-//                        replacedContent = Cursor.replaceOccurence(replacedContent, start, end, " ");
                         tokens.add(token);
                     }
                     if (!ocurrences.isEmpty()) {
@@ -64,7 +63,6 @@ public class LexicalAnalyzer {
                     }
                     stack.push(replacedContent);
                 });
-//        tokens.forEach(System.out::println);
         return Map.entry(code.getPath(), this.tokens);
     }
 

@@ -6,7 +6,7 @@ import lexical.analyzer.enums.TokenType;
  *
  * @author Antonio Neto e Uellington Damasceno
  */
-public class Token implements Comparable<Token>{
+public class Token implements Comparable<Token> {
 
     private TokenType type;
     private Lexame lexame;
@@ -16,12 +16,10 @@ public class Token implements Comparable<Token>{
         this.lexame = lexame;
     }
 
-    public Lexame getLexame(){
+    public Lexame getLexame() {
         return this.lexame;
     }
-    
-    
-    
+
     @Override
     public String toString() {
         return new StringBuilder()
@@ -37,6 +35,9 @@ public class Token implements Comparable<Token>{
 
     @Override
     public int compareTo(Token another) {
-        return this.lexame.compareTo(another.lexame);
+        boolean a = this.type.isError();
+        boolean b = another.type.isError();
+        
+        return a && !b ? 1 : !a && b ? -1 : lexame.compareTo(another.lexame);
     }
 }

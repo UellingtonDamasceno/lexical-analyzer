@@ -2,6 +2,7 @@ package lexical.analyzer.util;
 
 import java.util.List;
 import java.util.Set;
+import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 /**
@@ -23,10 +24,18 @@ public class ReservedWords {
             "true", "false",
             "global", "local");
 
-    private static final Set<Character> symbols = Set.of('#', '$',
+    private static final Set<Character> symbols = Set.of(
+            '#', '$',
             '%', '\'',
             '?', '@',
-            '^', '`', '~');
+            '^', '`', 
+            '~', '´', 
+            '¨', '¹',
+            '²','³',
+            '£','¢',
+            '¬','§');
+    
+
 
     public static boolean isReserved(String word) {
         return words.contains(word);
@@ -42,5 +51,11 @@ public class ReservedWords {
 
     public static List<Character> getSymbols() {
         return symbols.stream().collect(toList());
+    }
+    
+    public static String getRegexSymbols(){
+        return symbols.stream()
+                .map(String::valueOf)
+                .collect(joining("", "[", "áàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\\\\]"));
     }
 }

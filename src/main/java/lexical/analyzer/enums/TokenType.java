@@ -15,15 +15,28 @@ public enum TokenType {
     IDENTIFIER("IDE"),
     RELATIONAL("REL"),
     NUMBER("NRO"),
+    ERROR_NUMBER("NMF", true),
     ARITHMETIC("ART"),
     LOGICAL("LOG"),
-    DELIMITER("DEL");
+    ERROR_LOGICAL("OpMF", true),
+    DELIMITER("DEL"),
+    SYMBOL("SIB", true);
 
     private final String ACRONYM;
+    private final boolean error;
 
     private TokenType(String acronym) {
-        this.ACRONYM = acronym;
+       this(acronym, false);
     }
+
+    private TokenType(String ACRONYM, boolean error) {
+        this.ACRONYM = ACRONYM;
+        this.error = error;
+    }
+
+    public boolean isError() {
+        return error;
+    }   
 
     public Token getToken(Lexame lexame) {
         return new Token(this, lexame);
