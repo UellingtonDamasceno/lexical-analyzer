@@ -20,13 +20,15 @@ public enum TokenType {
     LOGICAL("LOG"),
     ERROR_LOGICAL("OpMF", true),
     DELIMITER("DEL"),
-    SYMBOL("SIB", true);
+    SYMBOL("SIB", true),
+    ERROR_BLOCK("CoMF", true),
+    ERROR_STRING("CMF", true);
 
     private final String ACRONYM;
     private final boolean error;
 
     private TokenType(String acronym) {
-       this(acronym, false);
+        this(acronym, false);
     }
 
     private TokenType(String ACRONYM, boolean error) {
@@ -36,7 +38,7 @@ public enum TokenType {
 
     public boolean isError() {
         return error;
-    }   
+    }
 
     public Token getToken(Lexame lexame) {
         return new Token(this, lexame);

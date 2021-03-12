@@ -98,6 +98,10 @@ public class Cursor {
     public Entry<Integer, Integer> popPosition() {
         return this.stack.pop();
     }
+    
+    public boolean hasValueMemory(){
+        return this.stack.isEmpty();
+    }
 
     public String previousChar() {
         if (this.column == 0 && this.line > 0) {
@@ -135,7 +139,7 @@ public class Cursor {
         return previousChar;
     }
 
-    public String currentChar() {
+    public String current() {
         return this.get(line, column);
     }
 
@@ -178,6 +182,7 @@ public class Cursor {
     }
 
     private String get(int line, int column) {
+        System.out.println("Linha: "+line + ", Coluna " + column);
         return this.lines.get(line).get(column);
     }
 }

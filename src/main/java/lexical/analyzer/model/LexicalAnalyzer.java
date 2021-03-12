@@ -12,6 +12,7 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import lexical.analyzer.enums.TokenType;
+import lexical.analyzer.model.automatons.ErrorAutomaton;
 import lexical.analyzer.util.Automatons;
 
 /**
@@ -32,9 +33,15 @@ public class LexicalAnalyzer {
     }
 
     public Entry<Path, Set<Token>> analyze() {
+
         Deque<String> stack = new ArrayDeque(1);
         stack.push(code.getTextContent());
         List<Entry<Integer, Integer>> ocurrences = new LinkedList();
+        
+//        tokens.addAll(ErrorAutomaton.findInvalidString(cursor));        
+        ErrorAutomaton.findInvalidBlockComment(cursor)
+                .ifPresent(error -> tokens.add(error));
+
         Automatons.getAutomatons()
                 .stream()
                 .forEach(entry -> {
