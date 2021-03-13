@@ -3,7 +3,7 @@ teste08 - sem erros
 */
 const int MAX = 10, MAX2 = 50;
 
-string Mensagem = "Hello world";
+string Mensagem = "Hello world;
 
 procedure start {  // comeca aqui o programa principal 
 
@@ -16,9 +16,9 @@ procedure start {  // comeca aqui o programa principal
 	print("Digite a idade");
 	read(idade);
 
-	if (idade >= 150) print("pode aposentar kkkk");
+	if (idade >= 150) print("pode aposentar kkkk);
 	else {
-		print("vai trabalhar");
+		print("vai trabalhar);
 		salario = salario; // hehehe
 	}	
  

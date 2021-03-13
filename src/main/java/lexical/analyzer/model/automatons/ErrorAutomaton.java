@@ -2,11 +2,9 @@ package lexical.analyzer.model.automatons;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
-import lexical.analyzer.enums.TokenType;
 import lexical.analyzer.model.Cursor;
-import lexical.analyzer.model.Lexame;
-import lexical.analyzer.model.Token;
 
 /**
  *
@@ -34,42 +32,35 @@ public class ErrorAutomaton {
         return index;
     }
 
-    public static List<Token> findInvalidString(Cursor cursor) {
-        List<Token> errors = new LinkedList();
-        StringBuilder builder = new StringBuilder();
+    public static List<Entry<Integer, Integer>> findInvalidString(Cursor cursor) {
+        List<Entry<Integer, Integer>> errors = new LinkedList();
         char current;
-        char previous;
-        Entry<Integer, Integer> cord;
-        Lexame lexame;
-        boolean hasValueMemory;
+        int start = 0;
+        int end = 0;
 
+        boolean hasMemory = false;
+
+        cursor.first();
         while (cursor.hasNext()) {
             current = cursor.current();
-            previous = cursor.showPrevious();
-            hasValueMemory = cursor.hasValueMemory();
-
-            if (!hasValueMemory && current == '\"') {
+            if (current == '"' && !hasMemory) {
                 cursor.pushPosition();
-            } else if (hasValueMemory && current == '\"' && !(previous == '\\')) {
+                start = cursor.getIndex();
+                hasMemory = true;
+            } else if (hasMemory && current == '"') {
+                if (!(cursor.showPrevious() == '\\')) {
+                    cursor.popPosition();
+                    hasMemory = false;
+                }
+            } else if (hasMemory && cursor.getColumn() == 1) {
+                hasMemory = false;
+                errors.add(Map.entry(start, end));
                 cursor.popPosition();
-                builder.delete(0, builder.length());
-
-            } else if (hasValueMemory && current == '\n') {
-                builder.append(current);
-                cord = cursor.popPosition();
-                lexame = new Lexame(builder.toString(), cord.getKey(), cord.getValue());
-                errors.add(new Token(TokenType.ERROR_STRING, lexame));
             }
-            if (hasValueMemory) {
-                builder.append(current);
-            }
+            end++;
             cursor.next();
-        }
-
-        if (cursor.hasValueMemory()) {
 
         }
-
         return errors;
     }
 }

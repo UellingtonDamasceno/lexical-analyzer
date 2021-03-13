@@ -32,7 +32,7 @@ public class Main {
         try {
             File outputDirectory = new File("./output");
             if (!outputDirectory.exists()) {
-                outputDirectory.createNewFile();
+                outputDirectory.mkdir();
             }
             FilesUtil.readAllFiles(Path.of("./input"), ".txt")
                     .entrySet()

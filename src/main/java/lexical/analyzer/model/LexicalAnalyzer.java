@@ -10,6 +10,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
+import static java.util.stream.Collectors.toList;
 import lexical.analyzer.enums.TokenType;
 import lexical.analyzer.model.automatons.ErrorAutomaton;
 import lexical.analyzer.util.Automatons;
@@ -46,9 +47,19 @@ public class LexicalAnalyzer {
             content = Cursor.replaceOccurence(content, index, content.length(), ' ');
             this.tokens.add(token);
         }
-        List<Token> list = ErrorAutomaton.findInvalidString(this.cursor);
-        this.tokens.addAll(list);
         stack.push(content);
+        var list = ErrorAutomaton.findInvalidString(this.cursor);
+        List<Token> errors = list.stream().map(entry -> {
+            int start = entry.getKey();
+            int end = entry.getValue();
+            var text = stack.pop();
+            var word = text.substring(start, end);
+            var cordinate = cursor.getPosition(start);
+            var lexame = new Lexame(word, cordinate.getKey(), cordinate.getValue());
+            stack.push(Cursor.replaceOccurence(text, start, end, ' '));
+            return new Token(TokenType.ERROR_STRING, lexame);
+        }).collect(toList());
+        this.tokens.addAll(errors);
 
         Automatons.getAutomatons().forEach((tokenType, pattern) -> {
             String code = stack.pop();

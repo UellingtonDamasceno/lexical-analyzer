@@ -59,11 +59,10 @@ public class Cursor implements CharacterIterator {
         occurences.forEach(ocurrence -> {
             Integer start = ocurrence.getKey();
             Integer end = ocurrence.getValue();
-            for (int i = cursor.position; i < end; i++) {
+            for (int i = cursor.position; i < end; i++, cursor.next()) {
                 if (i >= start) {
                     cursor.setCharInCurrentPosition(newChar);
                 }
-                cursor.next();
             }
         });
         return cursor.getText();
@@ -71,13 +70,20 @@ public class Cursor implements CharacterIterator {
 
     public static String replaceOccurence(String content, int start, int end, char newChar) {
         Cursor cursor = new Cursor(content);
-        for (int i = 0; i < end; i++) {
+        for (int i = 0; i < end; i++, cursor.next()) {
             if (i >= start) {
                 cursor.setCharInCurrentPosition(newChar);
             }
-            cursor.next();
         }
         return cursor.getText();
+    }
+
+    public int getLine() {
+        return line;
+    }
+
+    public int getColumn() {
+        return column;
     }
 
     public String getText() {
