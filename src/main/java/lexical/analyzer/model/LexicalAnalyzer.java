@@ -10,7 +10,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import lexical.analyzer.enums.TokenType;
 import lexical.analyzer.model.automatons.ErrorAutomaton;
 import lexical.analyzer.util.Automatons;
@@ -23,54 +22,55 @@ public class LexicalAnalyzer {
 
     private Set<Token> tokens;
 
-    private SourceCode code;
+    private SourceCode sourceCode;
     private Cursor cursor;
 
     public LexicalAnalyzer(SourceCode code) {
-        this.code = code;
-        this.cursor = new Cursor(code);
+        this.sourceCode = code;
+        this.cursor = new Cursor(code.getTextContent());
         this.tokens = new TreeSet();
     }
 
     public Entry<Path, Set<Token>> analyze() {
-
-        Deque<String> stack = new ArrayDeque(1);
-        stack.push(code.getTextContent());
         List<Entry<Integer, Integer>> ocurrences = new LinkedList();
-        
-//        tokens.addAll(ErrorAutomaton.findInvalidString(cursor));        
-        ErrorAutomaton.findInvalidBlockComment(cursor)
-                .ifPresent(error -> tokens.add(error));
+        Deque<String> stack = new ArrayDeque(1);
+        String content = sourceCode.getTextContent();
 
-        Automatons.getAutomatons()
-                .stream()
-                .forEach(entry -> {
-                    String replacedContent = stack.pop();
+        Integer index = ErrorAutomaton.findInvalidBlockComment(this.cursor);
 
-                    Pattern pattern = entry.getValue();
-                    Matcher matcher = pattern.matcher(replacedContent);
+        if (index >= 0) {
+            Map.Entry<Integer, Integer> cordinate = cursor.popPosition();
+            String word = content.substring(index);
+            Lexame lexame = new Lexame(word, cordinate.getKey(), cordinate.getValue());
+            Token token = new Token(TokenType.ERROR_BLOCK, lexame);
+            content = Cursor.replaceOccurence(content, index, content.length(), ' ');
+            this.tokens.add(token);
+        }
+        List<Token> list = ErrorAutomaton.findInvalidString(this.cursor);
+        this.tokens.addAll(list);
+        stack.push(content);
 
-                    while (matcher.find()) {
-                        int start = matcher.start();
-                        int end = matcher.end();
-
-                        ocurrences.add(Map.entry(start, end));
-
-                        TokenType tokenType = entry.getKey();
-                        var pos = cursor.getPosition(start);
-
-                        Lexame lexame = new Lexame(matcher.group(), pos.getKey(), pos.getValue());
-                        Token token = tokenType.getToken(lexame);
-
-                        tokens.add(token);
-                    }
-                    if (!ocurrences.isEmpty()) {
-                        replacedContent = Cursor.replaceOccurence(replacedContent, ocurrences, " ");
-                        ocurrences.clear();
-                    }
-                    stack.push(replacedContent);
-                });
-        return Map.entry(code.getPath(), this.tokens);
+        Automatons.getAutomatons().forEach((tokenType, pattern) -> {
+            String code = stack.pop();
+            String word;
+            Matcher matcher = pattern.matcher(code);
+            Entry<Integer, Integer> pos;
+            int start;
+            while (matcher.find()) {
+                start = matcher.start();
+                word = matcher.group();
+                pos = cursor.getPosition(start);
+                Lexame lexame = new Lexame(word, pos.getKey(), pos.getValue());
+                tokens.add(tokenType.getToken(lexame));
+                ocurrences.add(Map.entry(start, matcher.end()));
+            }
+            if (!ocurrences.isEmpty()) {
+                code = Cursor.replaceOccurence(code, ocurrences, ' ');
+                ocurrences.clear();
+            }
+            stack.push(code);
+        });
+        return Map.entry(sourceCode.getPath(), this.tokens);
     }
 
 }
