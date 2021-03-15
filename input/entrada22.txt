@@ -1,0 +1,17 @@
+/*
+    teste22 - Erro cadeia mal formada
+*/
+
+procedure start {
+    var string name = "amora";    
+    var string userName = "";
+    
+    print("whats your name?); //Error
+    read(userName);
+    
+    if(userName == name){
+        print("\"Hello\" ADM!");       
+    }else{
+        print("Error\"); //Error
+    }
+}

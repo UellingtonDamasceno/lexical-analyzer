@@ -1,0 +1,26 @@
+/*
+	teste23 - Erro Operador mal formado
+*/
+
+procedure start {
+    var string userName = "";
+    var string password = "";
+
+    var string admName = "ADM";
+    var string admPassword = "123";
+    
+    read(userName);
+    read(password);
+
+    if(userName != admName | password != admPassword){//Error
+        print("Invalid username or password.");
+    }
+    
+    if(userName == admName & password == admPassword){//Error
+        print("Welcome!");
+    }
+    
+    if(userName == admPassword && admName == password){
+        print("hum...");    
+    }
+}

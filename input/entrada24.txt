@@ -1,0 +1,8 @@
+/*
+teste24 - Comentário mal formado.
+*/
+/* this software start here! 
+
+procedure start{
+    print("hello world!");
+}

@@ -1,0 +1,7 @@
+1 1 BCM /*
+teste03 - Comentário mal formado.
+*/
+4 3 CoMF /* this software start here!
+procedure start{
+print("hello world!");
+}

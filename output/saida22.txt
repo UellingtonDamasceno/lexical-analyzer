@@ -1,0 +1,46 @@
+1 1 BCM /*
+teste01 - Erro cadeia mal formada
+*/
+4 2 PRE procedure
+4 12 PRE start
+4 18 DEL {
+5 2 PRE var
+5 6 PRE string
+5 13 IDE name
+5 18 REL =
+5 20 CAD "amora"
+5 27 DEL ;
+6 2 PRE var
+6 6 PRE string
+6 13 IDE userName
+6 22 REL =
+6 24 CAD ""
+6 26 DEL ;
+7 2 PRE print
+7 7 DEL (
+8 2 PRE read
+8 6 DEL (
+8 7 IDE userName
+8 15 DEL )
+8 16 DEL ;
+9 2 PRE if
+9 4 DEL (
+9 5 IDE userName
+9 14 REL ==
+9 17 IDE name
+9 21 DEL )
+9 22 DEL {
+10 2 PRE print
+10 7 DEL (
+10 8 CAD "\"Hello\" ADM!"
+10 24 DEL )
+10 25 DEL ;
+11 2 DEL }
+11 3 PRE else
+11 7 DEL {
+12 2 PRE print
+12 7 DEL (
+13 2 DEL }
+14 2 DEL }
+7 8 CMF "whats your name?); //Error
+12 8 CMF "Error\"); //Error
