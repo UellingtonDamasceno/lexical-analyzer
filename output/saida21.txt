@@ -1,43 +1,41 @@
-1 1 BCM /*
-teste00 - Erro número mal formado.
-*/
-4 2 PRE procedure
-4 12 PRE start
-4 18 DEL {
-5 2 PRE var
-5 6 PRE real
-5 11 IDE width
-5 17 REL =
-5 21 DEL .
-5 22 NRO 50
-5 24 DEL ;
-5 26 LCM //Error
-6 2 PRE var
-6 6 PRE real
-6 11 IDE height
-6 18 REL =
-6 20 NRO 35.5
-6 24 DEL ;
-7 2 PRE if
-7 4 DEL (
-7 5 IDE width
-7 11 REL <=
-7 14 NRO 2.0
-7 17 DEL )
-7 18 DEL {
-8 2 IDE width
-8 8 REL =
-8 12 DEL ;
-8 14 LCM //Error
-9 2 DEL }
-9 3 PRE else
-9 7 DEL {
-10 2 PRE print
-10 7 DEL (
-10 8 CAD "> 2.0"
-10 15 DEL )
-10 16 DEL ;
-11 2 DEL }
-12 2 DEL }
-5 19 NMF 1.
-8 10 NMF 2.
+1 < BCM, /*\nteste21 - Erro número mal formado.\n*/ >
+4 < PRE, procedure >
+4 < PRE, start >
+4 < DEL, { >
+5 < PRE, var >
+5 < PRE, real >
+5 < IDE, width >
+5 < REL, = >
+5 < DEL, . >
+5 < NRO, 50 >
+5 < DEL, ; >
+5 < LCM, //Error >
+6 < PRE, var >
+6 < PRE, real >
+6 < IDE, height >
+6 < REL, = >
+6 < NRO, 35.5 >
+6 < DEL, ; >
+7 < PRE, if >
+7 < DEL, ( >
+7 < IDE, width >
+7 < REL, <= >
+7 < NRO, 2.0 >
+7 < DEL, ) >
+7 < DEL, { >
+8 < IDE, width >
+8 < REL, = >
+8 < DEL, ; >
+8 < LCM, //Error >
+9 < DEL, } >
+9 < PRE, else >
+9 < DEL, { >
+10 < PRE, print >
+10 < DEL, ( >
+10 < CAD, "> 2.0" >
+10 < DEL, ) >
+10 < DEL, ; >
+11 < DEL, } >
+12 < DEL, } >
+5 < NMF, 1. >
+8 < NMF, 2. >

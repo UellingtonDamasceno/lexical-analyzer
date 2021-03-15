@@ -24,12 +24,11 @@ public class Token implements Comparable<Token> {
     public String toString() {
         return new StringBuilder()
                 .append(lexame.getLine())
-                .append(" ")
-                .append(lexame.getColumn())
-                .append(" ")
+                .append(" < ")
                 .append(type.getAcronym())
-                .append(" ")
+                .append(", ")
                 .append(lexame.getLexame())
+                .append(" >")
                 .toString();
     }
 

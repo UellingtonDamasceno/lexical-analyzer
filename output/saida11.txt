@@ -1,78 +1,78 @@
-1 1 IDE a
-1 3 IDE b
-1 5 IDE c
-1 7 IDE d
-1 9 IDE e
-1 11 IDE f
-1 13 IDE g
-1 15 IDE h
-1 17 IDE i
-1 19 IDE j
-1 21 IDE k
-1 23 IDE l
-1 25 IDE m
-1 27 IDE n
-1 29 IDE o
-1 31 IDE p
-1 33 IDE q
-1 35 IDE r
-1 37 IDE s
-1 39 IDE t
-1 41 IDE u
-1 43 IDE v
-1 45 IDE w
-1 47 IDE x
-1 49 IDE y
-1 51 IDE z
-2 2 IDE A
-2 4 IDE B
-2 6 IDE C
-2 8 IDE D
-2 10 IDE E
-2 12 IDE F
-2 14 IDE G
-2 16 IDE H
-2 18 IDE I
-2 20 IDE J
-2 22 IDE K
-2 24 IDE L
-2 26 IDE M
-2 28 IDE N
-2 30 IDE O
-2 32 IDE P
-2 34 IDE Q
-2 36 IDE R
-2 38 IDE S
-2 40 IDE T
-2 42 IDE U
-2 44 IDE V
-2 46 IDE W
-2 48 IDE X
-2 50 IDE Y
-2 52 IDE Z
-3 2 IDE a
-3 4 IDE B
-3 6 IDE c
-3 8 IDE D
-3 10 IDE e
-3 12 IDE F
-3 14 IDE g
-3 16 IDE H
-3 18 IDE i
-3 20 IDE J
-3 22 IDE k
-3 24 IDE L
-3 26 IDE m
-3 28 IDE N
-3 30 IDE o
-3 32 IDE P
-3 34 IDE q
-3 36 IDE R
-3 38 IDE s
-3 40 IDE T
-3 42 IDE u
-3 44 IDE V
-3 46 IDE w
-3 48 IDE x
-3 50 IDE Y
-3 52 IDE z
+1 < IDE, a >
+1 < IDE, b >
+1 < IDE, c >
+1 < IDE, d >
+1 < IDE, e >
+1 < IDE, f >
+1 < IDE, g >
+1 < IDE, h >
+1 < IDE, i >
+1 < IDE, j >
+1 < IDE, k >
+1 < IDE, l >
+1 < IDE, m >
+1 < IDE, n >
+1 < IDE, o >
+1 < IDE, p >
+1 < IDE, q >
+1 < IDE, r >
+1 < IDE, s >
+1 < IDE, t >
+1 < IDE, u >
+1 < IDE, v >
+1 < IDE, w >
+1 < IDE, x >
+1 < IDE, y >
+1 < IDE, z >
+2 < IDE, A >
+2 < IDE, B >
+2 < IDE, C >
+2 < IDE, D >
+2 < IDE, E >
+2 < IDE, F >
+2 < IDE, G >
+2 < IDE, H >
+2 < IDE, I >
+2 < IDE, J >
+2 < IDE, K >
+2 < IDE, L >
+2 < IDE, M >
+2 < IDE, N >
+2 < IDE, O >
+2 < IDE, P >
+2 < IDE, Q >
+2 < IDE, R >
+2 < IDE, S >
+2 < IDE, T >
+2 < IDE, U >
+2 < IDE, V >
+2 < IDE, W >
+2 < IDE, X >
+2 < IDE, Y >
+2 < IDE, Z >
+3 < IDE, a >
+3 < IDE, B >
+3 < IDE, c >
+3 < IDE, D >
+3 < IDE, e >
+3 < IDE, F >
+3 < IDE, g >
+3 < IDE, H >
+3 < IDE, i >
+3 < IDE, J >
+3 < IDE, k >
+3 < IDE, L >
+3 < IDE, m >
+3 < IDE, N >
+3 < IDE, o >
+3 < IDE, P >
+3 < IDE, q >
+3 < IDE, R >
+3 < IDE, s >
+3 < IDE, T >
+3 < IDE, u >
+3 < IDE, V >
+3 < IDE, w >
+3 < IDE, x >
+3 < IDE, Y >
+3 < IDE, z >

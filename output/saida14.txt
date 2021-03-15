@@ -1,23 +1,23 @@
-1 1 CAD "hello world"
-1 15 CAD "helloworld"
-2 2 CAD "helloworld"
-2 14 CAD "helloworld"
-3 2 CAD "0123456789"
-3 14 CAD "h3ll0w0rld"
-4 2 CAD "!@#$%¨&*()_+`{}^}~]/?;:,.'§ªº°,"
-5 2 CAD "1.0 2.0 3.0 10.00 11.00"
-6 2 CAD "\"\"\"\""
-7 2 CAD "hello\"world"
-8 2 CAD ""
-9 2 CAD ""
-9 4 CAD ""
-9 6 CAD ""
-9 8 CAD ""
-10 2 CAD " "
-10 6 CAD " "
-10 10 CAD " "
-11 2 CAD ""
-11 5 CAD " "
-11 9 CAD ""
-11 12 CAD " "
-9 10 CMF "
+1 < CAD, "hello world" >
+1 < CAD, "helloworld" >
+2 < CAD, "helloworld" >
+2 < CAD, "helloworld" >
+3 < CAD, "0123456789" >
+3 < CAD, "h3ll0w0rld" >
+4 < CAD, "!@#$%¨&*()_+`{}^}~]/?;:,.'§ªº°," >
+5 < CAD, "1.0 2.0 3.0 10.00 11.00" >
+6 < CAD, "\"\"\"\"" >
+7 < CAD, "hello\"world" >
+8 < CAD, "" >
+9 < CAD, "" >
+9 < CAD, "" >
+9 < CAD, "" >
+9 < CAD, "" >
+10 < CAD, " " >
+10 < CAD, " " >
+10 < CAD, " " >
+11 < CAD, "" >
+11 < CAD, " " >
+11 < CAD, "" >
+11 < CAD, " " >
+9 < CMF, " >

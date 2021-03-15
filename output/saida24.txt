@@ -1,7 +1,2 @@
-1 1 BCM /*
-teste03 - Comentário mal formado.
-*/
-4 3 CoMF /* this software start here!
-procedure start{
-print("hello world!");
-}
+1 < BCM, /*\nteste24 - Comentário mal formado.\n*/ >
+4 < CoMF, /* this software start here!\nprocedure start{\nprint("hello world!");\n} >

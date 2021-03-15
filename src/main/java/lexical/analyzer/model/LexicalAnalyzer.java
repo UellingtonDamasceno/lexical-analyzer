@@ -41,7 +41,7 @@ public class LexicalAnalyzer {
 
         if (index >= 0) {
             Map.Entry<Integer, Integer> cordinate = cursor.popPosition();
-            String word = content.substring(index);
+            String word = content.substring(index).replaceAll("\n", "\\\\n");
             Lexame lexame = new Lexame(word, cordinate.getKey(), cordinate.getValue());
             Token token = new Token(TokenType.ERROR_BLOCK, lexame);
             content = Cursor.replaceOccurence(content, index, content.length(), ' ');
@@ -69,7 +69,7 @@ public class LexicalAnalyzer {
             int start;
             while (matcher.find()) {
                 start = matcher.start();
-                word = matcher.group();
+                word = matcher.group().replaceAll("\n", "\\\\n");
                 pos = cursor.getPosition(start);
                 Lexame lexame = new Lexame(word, pos.getKey(), pos.getValue());
                 tokens.add(tokenType.getToken(lexame));

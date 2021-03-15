@@ -13,6 +13,7 @@ import java.util.Map.Entry;
 import java.util.function.Function;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Pattern;
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.Collectors.toMap;
 import lexical.analyzer.main.Main;
@@ -24,8 +25,9 @@ import lexical.analyzer.main.Main;
 public class FilesUtil {
 
     public static Map<Path, List<String>> readAllFiles(Path path, String extension) throws IOException {
+        Pattern pattern = Pattern.compile("\\.\\\\input\\\\entrada\\d+.txt");
         return Files.list(path)
-                .filter(p -> p.toString().endsWith(extension))
+                .filter(p -> pattern.matcher(p.toString()).find())
                 .collect(toMap(Function.identity(), FilesUtil::getLines));
     }
 

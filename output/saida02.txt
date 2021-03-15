@@ -1,22 +1,22 @@
-1 1 PRE var
-1 5 PRE const
-1 11 PRE typedef
-1 19 PRE struct
-1 26 PRE extends
-2 2 PRE procedure
-2 12 PRE function
-2 21 PRE start
-3 2 PRE return
-3 9 PRE if
-3 12 PRE else
-4 2 PRE then
-4 7 PRE while
-5 2 PRE read
-5 7 PRE print
-6 2 PRE real
-7 2 PRE boolean
-8 2 PRE string
-8 9 PRE true
-9 2 PRE false
-9 8 PRE global
-9 15 PRE local
+1 < PRE, var >
+1 < PRE, const >
+1 < PRE, typedef >
+1 < PRE, struct >
+1 < PRE, extends >
+2 < PRE, procedure >
+2 < PRE, function >
+2 < PRE, start >
+3 < PRE, return >
+3 < PRE, if >
+3 < PRE, else >
+4 < PRE, then >
+4 < PRE, while >
+5 < PRE, read >
+5 < PRE, print >
+6 < PRE, real >
+7 < PRE, boolean >
+8 < PRE, string >
+8 < PRE, true >
+9 < PRE, false >
+9 < PRE, global >
+9 < PRE, local >

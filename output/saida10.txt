@@ -1,52 +1,52 @@
-1 1 DEL ;
-2 2 DEL ,
-3 2 DEL (
-4 2 DEL )
-5 2 DEL {
-6 2 DEL }
-7 2 DEL [
-8 2 DEL ]
-9 2 DEL .
-10 2 DEL ;
-10 4 DEL ,
-10 6 DEL (
-10 8 DEL )
-10 10 DEL {
-10 12 DEL }
-10 14 DEL [
-10 16 DEL ]
-10 18 DEL .
-11 2 DEL ;
-11 3 DEL ,
-11 4 DEL (
-11 5 DEL )
-11 6 DEL {
-11 7 DEL }
-11 8 DEL [
-11 9 DEL ]
-11 10 DEL .
-12 2 DEL (
-12 3 DEL ;
-12 4 DEL )
-12 5 DEL ,
-12 6 DEL {
-12 7 DEL .
-12 8 DEL .
-12 9 DEL }
-12 10 DEL ;
-12 11 DEL (
-12 12 DEL (
-12 13 DEL (
-12 14 DEL )
-12 15 DEL )
-12 16 DEL )
-12 17 DEL {
-12 18 DEL [
-12 19 DEL (
-12 20 DEL ;
-12 21 DEL ;
-12 22 DEL ;
-12 23 DEL ;
-12 24 DEL )
-12 25 DEL ]
-12 26 DEL }
+1 < DEL, ; >
+2 < DEL, , >
+3 < DEL, ( >
+4 < DEL, ) >
+5 < DEL, { >
+6 < DEL, } >
+7 < DEL, [ >
+8 < DEL, ] >
+9 < DEL, . >
+10 < DEL, ; >
+10 < DEL, , >
+10 < DEL, ( >
+10 < DEL, ) >
+10 < DEL, { >
+10 < DEL, } >
+10 < DEL, [ >
+10 < DEL, ] >
+10 < DEL, . >
+11 < DEL, ; >
+11 < DEL, , >
+11 < DEL, ( >
+11 < DEL, ) >
+11 < DEL, { >
+11 < DEL, } >
+11 < DEL, [ >
+11 < DEL, ] >
+11 < DEL, . >
+12 < DEL, ( >
+12 < DEL, ; >
+12 < DEL, ) >
+12 < DEL, , >
+12 < DEL, { >
+12 < DEL, . >
+12 < DEL, . >
+12 < DEL, } >
+12 < DEL, ; >
+12 < DEL, ( >
+12 < DEL, ( >
+12 < DEL, ( >
+12 < DEL, ) >
+12 < DEL, ) >
+12 < DEL, ) >
+12 < DEL, { >
+12 < DEL, [ >
+12 < DEL, ( >
+12 < DEL, ; >
+12 < DEL, ; >
+12 < DEL, ; >
+12 < DEL, ; >
+12 < DEL, ) >
+12 < DEL, ] >
+12 < DEL, } >

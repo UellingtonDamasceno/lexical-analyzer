@@ -1,72 +1,70 @@
-1 1 BCM /*
-teste08 - sem erros
-*/
-4 2 PRE const
-4 8 PRE int
-4 12 IDE MAX
-4 16 REL =
-4 18 NRO 10
-4 20 DEL ,
-4 22 IDE MAX2
-4 27 REL =
-4 29 NRO 50
-4 31 DEL ;
-5 2 PRE string
-5 9 IDE Mensagem
-5 18 REL =
-6 2 PRE procedure
-6 12 PRE start
-6 18 DEL {
-6 21 LCM // comeca aqui o programa principal
-7 2 PRE int
-7 6 IDE idade
-7 11 DEL ;
-8 2 PRE real
-8 7 IDE salario
-8 14 DEL ;
-9 2 PRE string
-9 9 IDE nome
-9 13 DEL ;
-10 2 PRE print
-10 7 DEL (
-10 8 CAD "Digite o nome"
-10 23 DEL )
-10 24 DEL ;
-11 2 PRE read
-11 6 DEL (
-11 7 IDE nome
-11 11 DEL )
-11 12 DEL ;
-12 2 PRE print
-12 7 DEL (
-12 8 CAD "Digite a idade"
-12 24 DEL )
-12 25 DEL ;
-13 2 PRE read
-13 6 DEL (
-13 7 IDE idade
-13 12 DEL )
-13 13 DEL ;
-14 2 PRE if
-14 5 DEL (
-14 6 IDE idade
-14 12 REL >=
-14 15 NRO 150
-14 18 DEL )
-14 20 PRE print
-14 25 DEL (
-15 2 PRE else
-15 7 DEL {
-16 2 PRE print
-16 7 DEL (
-17 2 IDE salario
-17 10 REL =
-17 12 IDE salario
-17 19 DEL ;
-17 21 LCM // hehehe
-18 2 DEL }
-19 2 DEL }
-19 4 LCM // fim start
-5 20 CMF "Hello world;
-14 26 CMF "pode aposentar kkkk);
-16 8 CMF "vai trabalhar);
+1 < BCM, /*\nteste08 - sem erros\n*/ >
+4 < PRE, const >
+4 < PRE, int >
+4 < IDE, MAX >
+4 < REL, = >
+4 < NRO, 10 >
+4 < DEL, , >
+4 < IDE, MAX2 >
+4 < REL, = >
+4 < NRO, 50 >
+4 < DEL, ; >
+5 < PRE, string >
+5 < IDE, Mensagem >
+5 < REL, = >
+6 < PRE, procedure >
+6 < PRE, start >
+6 < DEL, { >
+6 < LCM, // comeca aqui o programa principal >
+7 < PRE, int >
+7 < IDE, idade >
+7 < DEL, ; >
+8 < PRE, real >
+8 < IDE, salario >
+8 < DEL, ; >
+9 < PRE, string >
+9 < IDE, nome >
+9 < DEL, ; >
+10 < PRE, print >
+10 < DEL, ( >
+10 < CAD, "Digite o nome" >
+10 < DEL, ) >
+10 < DEL, ; >
+11 < PRE, read >
+11 < DEL, ( >
+11 < IDE, nome >
+11 < DEL, ) >
+11 < DEL, ; >
+12 < PRE, print >
+12 < DEL, ( >
+12 < CAD, "Digite a idade" >
+12 < DEL, ) >
+12 < DEL, ; >
+13 < PRE, read >
+13 < DEL, ( >
+13 < IDE, idade >
+13 < DEL, ) >
+13 < DEL, ; >
+14 < PRE, if >
+14 < DEL, ( >
+14 < IDE, idade >
+14 < REL, >= >
+14 < NRO, 150 >
+14 < DEL, ) >
+14 < PRE, print >
+14 < DEL, ( >
+15 < PRE, else >
+15 < DEL, { >
+16 < PRE, print >
+16 < DEL, ( >
+17 < IDE, salario >
+17 < REL, = >
+17 < IDE, salario >
+17 < DEL, ; >
+17 < LCM, // hehehe >
+18 < DEL, } >
+19 < DEL, } >
+19 < LCM, // fim start >
+5 < CMF, "Hello world; >
+14 < CMF, "pode aposentar kkkk); >
+16 < CMF, "vai trabalhar); >

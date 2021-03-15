@@ -1,25 +1,25 @@
-1 1 LCM //Olá comentário de linha
-2 2 IDE Ol
-2 6 LCM // Aqui é um comentário diferenciado
-3 2 IDE Ol
-3 6 NRO 2
-3 8 LCM //Aqui é um comentário
-4 2 IDE Ol
-4 5 LCM // Aqui é outro comentário diferenciado
-5 2 IDE Ol
-5 5 LCM //Baita Comentário ferrado de dificil de resolver
-6 2 LCM // Olá novamente!
-7 2 LCM // 0L4 N0v4m3nt3...
-8 2 LCM // 0123456789
-9 2 LCM // + - * / ++ --
-10 2 LCM // var const typdef struct extends procedure
-11 2 LCM // var_ const_ typedef_ struct_
-12 2 LCM // 1.0 2.3 3.4 5.6 10.25 168.743 115.75
-13 2 LCM //
-14 2 LCM // // Olá comentário do comentário!
-15 2 LCM // && || !!
-16 2 LCM // !@#$%¨&&*()`{´[]~;/,.<>°ºª
-2 4 SIB á
-3 4 SIB á
-4 4 SIB á
-5 4 SIB á
+1 < LCM, //Olá comentário de linha >
+2 < IDE, Ol >
+2 < LCM, // Aqui é um comentário diferenciado >
+3 < IDE, Ol >
+3 < NRO, 2 >
+3 < LCM, //Aqui é um comentário >
+4 < IDE, Ol >
+4 < LCM, // Aqui é outro comentário diferenciado >
+5 < IDE, Ol >
+5 < LCM, //Baita Comentário ferrado de dificil de resolver >
+6 < LCM, // Olá novamente! >
+7 < LCM, // 0L4 N0v4m3nt3... >
+8 < LCM, // 0123456789 >
+9 < LCM, // + - * / ++ -- >
+10 < LCM, // var const typdef struct extends procedure >
+11 < LCM, // var_ const_ typedef_ struct_ >
+12 < LCM, // 1.0 2.3 3.4 5.6 10.25 168.743 115.75 >
+13 < LCM, // >
+14 < LCM, // // Olá comentário do comentário! >
+15 < LCM, // && || !! >
+16 < LCM, // !@#$%¨&&*()`{´[]~;/,.<>°ºª >
+2 < SIB, á >
+3 < SIB, á >
+4 < SIB, á >
+5 < SIB, á >

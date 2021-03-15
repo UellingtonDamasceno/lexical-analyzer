@@ -1,37 +1,37 @@
-1 1 LOG &&
-1 4 LOG &&
-1 7 LOG &&
-1 10 LOG &&
-1 13 LOG &&
-1 16 LOG &&
-2 2 LOG ||
-2 5 LOG ||
-2 8 LOG ||
-2 11 LOG ||
-2 14 LOG ||
-2 17 LOG ||
-2 20 LOG ||
-3 2 LOG &&
-3 5 LOG &&
-3 8 LOG &&
-3 11 LOG &&
-3 14 LOG &&
-3 17 LOG ||
-3 20 LOG ||
-3 23 LOG ||
-3 26 LOG ||
-3 29 LOG !
-3 31 LOG !
-3 33 LOG !
-3 35 LOG !
-3 37 LOG !
-3 39 LOG !
-3 41 LOG !
-4 2 LOG !
-4 4 LOG !
-4 6 LOG !
-4 8 LOG !
-4 10 LOG !
-4 12 LOG !
-4 14 LOG !
-4 16 LOG !
+1 < LOG, && >
+1 < LOG, && >
+1 < LOG, && >
+1 < LOG, && >
+1 < LOG, && >
+1 < LOG, && >
+2 < LOG, || >
+2 < LOG, || >
+2 < LOG, || >
+2 < LOG, || >
+2 < LOG, || >
+2 < LOG, || >
+2 < LOG, || >
+3 < LOG, && >
+3 < LOG, && >
+3 < LOG, && >
+3 < LOG, && >
+3 < LOG, && >
+3 < LOG, || >
+3 < LOG, || >
+3 < LOG, || >
+3 < LOG, || >
+3 < LOG, ! >
+3 < LOG, ! >
+3 < LOG, ! >
+3 < LOG, ! >
+3 < LOG, ! >
+3 < LOG, ! >
+3 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
+4 < LOG, ! >
