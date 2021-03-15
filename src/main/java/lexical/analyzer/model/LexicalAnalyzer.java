@@ -1,14 +1,11 @@
 package lexical.analyzer.model;
 
-import java.nio.file.Path;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeSet;
 import java.util.regex.Matcher;
 import static java.util.stream.Collectors.toList;
 import lexical.analyzer.enums.TokenType;
@@ -21,18 +18,20 @@ import lexical.analyzer.util.Automatons;
  */
 public class LexicalAnalyzer {
 
-    private Set<Token> tokens;
-
     private SourceCode sourceCode;
     private Cursor cursor;
 
     public LexicalAnalyzer(SourceCode code) {
         this.sourceCode = code;
         this.cursor = new Cursor(code.getTextContent());
-        this.tokens = new TreeSet();
     }
 
-    public Entry<Path, Set<Token>> analyze() {
+    /**
+     * Percorre o arquivo fonte, em busca dos tokens e verificando os erros
+     *
+     * @return Código fonte com lista de tokens atualizada
+     */
+    public SourceCode analyze() {
         List<Entry<Integer, Integer>> ocurrences = new LinkedList();
         Deque<String> stack = new ArrayDeque(1);
         String content = sourceCode.getTextContent();
@@ -45,7 +44,7 @@ public class LexicalAnalyzer {
             Lexame lexame = new Lexame(word, cordinate.getKey(), cordinate.getValue());
             Token token = new Token(TokenType.ERROR_BLOCK, lexame);
             content = Cursor.replaceOccurence(content, index, content.length(), ' ');
-            this.tokens.add(token);
+            this.sourceCode.getTokens().add(token);
         }
         stack.push(content);
         var list = ErrorAutomaton.findInvalidString(this.cursor);
@@ -59,7 +58,7 @@ public class LexicalAnalyzer {
             stack.push(Cursor.replaceOccurence(text, start, end, ' '));
             return new Token(TokenType.ERROR_STRING, lexame);
         }).collect(toList());
-        this.tokens.addAll(errors);
+        this.sourceCode.getTokens().addAll(errors);
 
         Automatons.getAutomatons().forEach((tokenType, pattern) -> {
             String code = stack.pop();
@@ -72,7 +71,7 @@ public class LexicalAnalyzer {
                 word = matcher.group().replaceAll("\n", "\\\\n");
                 pos = cursor.getPosition(start);
                 Lexame lexame = new Lexame(word, pos.getKey(), pos.getValue());
-                tokens.add(tokenType.getToken(lexame));
+                sourceCode.getTokens().add(tokenType.getToken(lexame));
                 ocurrences.add(Map.entry(start, matcher.end()));
             }
             if (!ocurrences.isEmpty()) {
@@ -81,7 +80,7 @@ public class LexicalAnalyzer {
             }
             stack.push(code);
         });
-        return Map.entry(sourceCode.getPath(), this.tokens);
+        return sourceCode;
     }
 
 }

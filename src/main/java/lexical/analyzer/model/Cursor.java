@@ -54,6 +54,16 @@ public class Cursor implements CharacterIterator {
         this.stack = new ArrayDeque();
     }
 
+    /**
+     *
+     * Dado uma string content, e uma lista de ocorrências, o método altera
+     * todos os caracteres para o "newChar"
+     *
+     * @param content conteúdo de entrada
+     * @param occurences lista de ocorrências que serão trocadas
+     * @param newChar char que será trocado
+     * @return o conteúdo processado
+     */
     public static String replaceOccurence(String content, List<Entry<Integer, Integer>> occurences, char newChar) {
         Cursor cursor = new Cursor(content);
         occurences.forEach(ocurrence -> {
@@ -68,6 +78,16 @@ public class Cursor implements CharacterIterator {
         return cursor.getText();
     }
 
+    /**
+     * Dado uma string content, e uma ocorrência, o método altera todos os
+     * caracteres para o "newChar"
+     *
+     * @param content conteúdo de entrada
+     * @param start inicio da ocorrência
+     * @param end final da ocorrência
+     * @param newChar char para qual será trocado
+     * @return conteúdo tratado
+     */
     public static String replaceOccurence(String content, int start, int end, char newChar) {
         Cursor cursor = new Cursor(content);
         for (int i = 0; i < end; i++, cursor.next()) {
@@ -76,6 +96,61 @@ public class Cursor implements CharacterIterator {
             }
         }
         return cursor.getText();
+    }
+
+    /**
+     * Dado um índice correspondente a uma posição, o método devolve em qual
+     * linha esse caractere se encontra na string
+     *
+     * @param index posição na string
+     * @return numero da linha em que o caractere se encontra
+     */
+    public int whatLineIs(int index) {
+        if (index > this.end || index < this.begin) {
+            throw new IllegalArgumentException("Invalid index: " + index
+                    + " Min Value: " + begin + " Max Value: " + end);
+        } else {
+            this.first();
+            for (int i = 0; i <= index; i++) {
+                this.next();
+            }
+            return this.line;
+        }
+    }
+
+    /**
+     * Armazena a posição atual do cursor
+     */
+    public void pushPosition() {
+        this.stack.push(Map.entry(line, column));
+    }
+
+    /**
+     * Devolve a ultima coordenada armazenada
+     *
+     * @return
+     */
+    public Entry<Integer, Integer> popPosition() {
+        return this.stack.pop();
+    }
+
+    /**
+     * Função que recebe um indice e devolve uma coordenada(linha coluna) da
+     * ocorrência
+     *
+     * @param index indice da ocorência
+     * @return coordenada
+     */
+    public Entry<Integer, Integer> getPosition(int index) {
+        this.first();
+        for (int i = 0; i < index; i++) {
+            this.next();
+        }
+        return Map.entry(line, column);
+    }
+
+    public boolean hasValueMemory() {
+        return !this.stack.isEmpty();
     }
 
     public int getLine() {
@@ -111,19 +186,6 @@ public class Cursor implements CharacterIterator {
 
     public boolean hasNext() {
         return this.current() != DONE;
-    }
-
-    public int whatLineIs(int index) {
-        if (index > this.end || index < this.begin) {
-            throw new IllegalArgumentException("Invalid index: " + index
-                    + " Min Value: " + begin + " Max Value: " + end);
-        } else {
-            this.first();
-            for (int i = 0; i <= index; i++) {
-                this.next();
-            }
-            return this.line;
-        }
     }
 
     public void setCharInCurrentPosition(char newChar) {
@@ -234,26 +296,6 @@ public class Cursor implements CharacterIterator {
         } catch (CloneNotSupportedException ex) {
             return new Cursor(text.toString(), begin, end, position);
         }
-    }
-
-    public void pushPosition() {
-        this.stack.push(Map.entry(line, column));
-    }
-
-    public Entry<Integer, Integer> popPosition() {
-        return this.stack.pop();
-    }
-
-    public boolean hasValueMemory() {
-        return !this.stack.isEmpty();
-    }
-
-    public Entry<Integer, Integer> getPosition(int index) {
-        this.first();
-        for (int i = 0; i < index; i++) {
-            this.next();
-        }
-        return Map.entry(line, column);
     }
 
     private String getLine(int index) {

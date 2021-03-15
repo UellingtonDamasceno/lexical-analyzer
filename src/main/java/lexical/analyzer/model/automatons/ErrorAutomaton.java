@@ -12,6 +12,15 @@ import lexical.analyzer.model.Cursor;
  */
 public class ErrorAutomaton {
 
+    /**
+     * Função responsável por pesquisar no arquivo comentários de blocos
+     * inválidos
+     *
+     * SÓ EXISTE, NO MÁXIMO, UM ERRO DE COMENTÁRIO DE BLOCO POR ARQUIVO
+     *
+     * @param cursor iterador do texto
+     * @return indice do comentário de bloco inválido
+     */
     public static Integer findInvalidBlockComment(Cursor cursor) {
         char current, next;
         boolean hasValueMemory = false;
@@ -32,6 +41,12 @@ public class ErrorAutomaton {
         return index;
     }
 
+    /**
+     * Função responsável por procurar strings inválidas
+     *
+     * @param cursor iterador do texto
+     * @return Lista de coordenadas
+     */
     public static List<Entry<Integer, Integer>> findInvalidString(Cursor cursor) {
         List<Entry<Integer, Integer>> errors = new LinkedList();
         char current;

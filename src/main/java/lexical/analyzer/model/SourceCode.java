@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.Function;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.summingInt;
@@ -20,6 +22,7 @@ public class SourceCode implements Comparable<SourceCode> {
 
     private Path path;
     private List<String> lines;
+    private Set<Token> tokens;
 
     public SourceCode(Entry<Path, List<String>> entry) {
         this(entry.getKey(), entry.getValue());
@@ -28,6 +31,19 @@ public class SourceCode implements Comparable<SourceCode> {
     public SourceCode(Path path, List<String> lines) {
         this.path = path;
         this.lines = lines;
+        this.tokens = new TreeSet();
+    }
+
+    public void setPath(Path path) {
+        this.path = path;
+    }
+
+    public Set<Token> getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(Set<Token> tokens) {
+        this.tokens = tokens;
     }
 
     public Path getPath() {
@@ -36,14 +52,6 @@ public class SourceCode implements Comparable<SourceCode> {
 
     public List<String> getLines() {
         return Collections.unmodifiableList(this.lines);
-    }
-
-    public Map<Integer, List<String>> getNumberedLines() {
-        return Stream.iterate(0, i -> i + 1)
-                .limit(lines.size())
-                .collect(toMap(Function.identity(), (index) -> {
-                    return lines.get(index).chars().mapToObj(c -> Character.toString(c)).collect(toList());
-                }));
     }
 
     public int getCharNumber() {
