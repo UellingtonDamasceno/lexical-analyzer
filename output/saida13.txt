@@ -1,39 +1,39 @@
-1 < IDE, var_ >
-1 < IDE, v4r >
-1 < IDE, variavel >
-1 < IDE, var_iavel >
-1 < IDE, vari4v3l >
-2 < IDE, const_ >
-2 < IDE, c0st >
-2 < IDE, constante >
-2 < IDE, const_ante >
-2 < IDE, c0n5t4nt3 >
-3 < IDE, typedef_ >
-3 < IDE, struct_ >
-3 < IDE, extends_ >
-3 < IDE, procedure_ >
-3 < IDE, function_ >
-4 < IDE, start_ >
-4 < IDE, return_ >
-4 < IDE, if_ >
-4 < IDE, else_ >
-4 < IDE, then_ >
-4 < IDE, while_ >
-4 < IDE, read_ >
-4 < IDE, print_ >
-4 < IDE, int_ >
-5 < IDE, real_ >
-5 < IDE, boolean_ >
-5 < IDE, string_ >
-5 < IDE, true_ >
-5 < IDE, false_ >
-5 < IDE, global_ >
-5 < IDE, local_ >
-6 < IDE, varvar >
-6 < IDE, constconst >
-6 < IDE, thenthen >
-6 < IDE, readread >
-6 < IDE, printprintprint >
-7 < IDE, ifififififififififififif >
-8 < IDE, if_if_if_if_if_if_if_if_if_if >
+1 IDE, var_
+1 IDE, v4r
+1 IDE, variavel
+1 IDE, var_iavel
+1 IDE, vari4v3l
+2 IDE, const_
+2 IDE, c0st
+2 IDE, constante
+2 IDE, const_ante
+2 IDE, c0n5t4nt3
+3 IDE, typedef_
+3 IDE, struct_
+3 IDE, extends_
+3 IDE, procedure_
+3 IDE, function_
+4 IDE, start_
+4 IDE, return_
+4 IDE, if_
+4 IDE, else_
+4 IDE, then_
+4 IDE, while_
+4 IDE, read_
+4 IDE, print_
+4 IDE, int_
+5 IDE, real_
+5 IDE, boolean_
+5 IDE, string_
+5 IDE, true_
+5 IDE, false_
+5 IDE, global_
+5 IDE, local_
+6 IDE, varvar
+6 IDE, constconst
+6 IDE, thenthen
+6 IDE, readread
+6 IDE, printprintprint
+7 IDE, ifififififififififififif
+8 IDE, if_if_if_if_if_if_if_if_if_if
 Não foram encontrado erros neste arquivo.

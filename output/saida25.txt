@@ -1,4 +1,4 @@
-1 < BCM, /*\nteste 25 - Erro simbolo\n*/ >
-4 < SIB, @ >
-5 < SIB, # >
-6 < SIB, % >
+1 BCM, /*\nteste 25 - Erro simbolo\n*/
+4 SIB, @
+5 SIB, #
+6 SIB, %

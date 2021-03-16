@@ -1,49 +1,49 @@
-1 < NRO, 1 >
-2 < NRO, 12 >
-3 < NRO, 123.0 >
-4 < NRO, 0 >
-4 < NRO, 1 >
-4 < NRO, 2 >
-4 < NRO, 3 >
-4 < NRO, 4 >
-4 < NRO, 5 >
-4 < NRO, 6 >
-4 < NRO, 7 >
-4 < NRO, 8 >
-4 < NRO, 9 >
-5 < NRO, 0123456789 >
-6 < NRO, 0.0 >
-6 < NRO, 0.1 >
-6 < NRO, 0.2 >
-6 < NRO, 0.3 >
-6 < NRO, 0.4 >
-6 < NRO, 0.5 >
-6 < NRO, 0.6 >
-6 < NRO, 0.7 >
-6 < NRO, 0.8 >
-6 < NRO, 0.9 >
-7 < NRO, 1.10 >
-7 < NRO, 1.20 >
-7 < NRO, 1.30 >
-7 < NRO, 1.40 >
-7 < NRO, 1.50 >
-7 < NRO, 1.60 >
-7 < NRO, 1.70 >
-7 < NRO, 1.80 >
-7 < NRO, 1.90 >
-8 < NRO, 10.10 >
-8 < NRO, 20.20 >
-8 < NRO, 30.30 >
-8 < NRO, 40.40 >
-8 < NRO, 50.50 >
-8 < NRO, 60.60 >
-8 < NRO, 70.70 >
-8 < NRO, 80.80 >
-8 < NRO, 90.90 >
-9 < DEL, . >
-9 < NRO, 5.15 >
-9 < DEL, . >
-9 < NRO, 64.4654 >
-9 < DEL, . >
-9 < NRO, 6546 >
+1 NRO, 1
+2 NRO, 12
+3 NRO, 123.0
+4 NRO, 0
+4 NRO, 1
+4 NRO, 2
+4 NRO, 3
+4 NRO, 4
+4 NRO, 5
+4 NRO, 6
+4 NRO, 7
+4 NRO, 8
+4 NRO, 9
+5 NRO, 0123456789
+6 NRO, 0.0
+6 NRO, 0.1
+6 NRO, 0.2
+6 NRO, 0.3
+6 NRO, 0.4
+6 NRO, 0.5
+6 NRO, 0.6
+6 NRO, 0.7
+6 NRO, 0.8
+6 NRO, 0.9
+7 NRO, 1.10
+7 NRO, 1.20
+7 NRO, 1.30
+7 NRO, 1.40
+7 NRO, 1.50
+7 NRO, 1.60
+7 NRO, 1.70
+7 NRO, 1.80
+7 NRO, 1.90
+8 NRO, 10.10
+8 NRO, 20.20
+8 NRO, 30.30
+8 NRO, 40.40
+8 NRO, 50.50
+8 NRO, 60.60
+8 NRO, 70.70
+8 NRO, 80.80
+8 NRO, 90.90
+9 DEL, .
+9 NRO, 5.15
+9 DEL, .
+9 NRO, 64.4654
+9 DEL, .
+9 NRO, 6546
 Não foram encontrado erros neste arquivo.

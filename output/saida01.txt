@@ -1,24 +1,24 @@
-1 < PRE, var >
-1 < PRE, const >
-1 < PRE, typedef >
-1 < PRE, struct >
-1 < PRE, extends >
-1 < PRE, procedure >
-1 < PRE, function >
-1 < PRE, start >
-1 < PRE, return >
-1 < PRE, if >
-1 < PRE, else >
-1 < PRE, then >
-1 < PRE, while >
-1 < PRE, read >
-1 < PRE, print >
-1 < PRE, int >
-1 < PRE, real >
-1 < PRE, boolean >
-1 < PRE, string >
-1 < PRE, true >
-1 < PRE, false >
-1 < PRE, global >
-1 < PRE, local >
+1 PRE, var
+1 PRE, const
+1 PRE, typedef
+1 PRE, struct
+1 PRE, extends
+1 PRE, procedure
+1 PRE, function
+1 PRE, start
+1 PRE, return
+1 PRE, if
+1 PRE, else
+1 PRE, then
+1 PRE, while
+1 PRE, read
+1 PRE, print
+1 PRE, int
+1 PRE, real
+1 PRE, boolean
+1 PRE, string
+1 PRE, true
+1 PRE, false
+1 PRE, global
+1 PRE, local
 Não foram encontrado erros neste arquivo.

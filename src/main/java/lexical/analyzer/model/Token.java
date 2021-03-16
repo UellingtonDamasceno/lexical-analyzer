@@ -28,11 +28,10 @@ public class Token implements Comparable<Token> {
     public String toString() {
         return new StringBuilder()
                 .append(lexame.getLine())
-                .append(" < ")
+                .append(" ")
                 .append(type.getAcronym())
                 .append(", ")
                 .append(lexame.getLexame())
-                .append(" >")
                 .toString();
     }
 

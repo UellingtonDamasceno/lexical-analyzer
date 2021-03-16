@@ -1,53 +1,53 @@
-1 < DEL, ; >
-2 < DEL, , >
-3 < DEL, ( >
-4 < DEL, ) >
-5 < DEL, { >
-6 < DEL, } >
-7 < DEL, [ >
-8 < DEL, ] >
-9 < DEL, . >
-10 < DEL, ; >
-10 < DEL, , >
-10 < DEL, ( >
-10 < DEL, ) >
-10 < DEL, { >
-10 < DEL, } >
-10 < DEL, [ >
-10 < DEL, ] >
-10 < DEL, . >
-11 < DEL, ; >
-11 < DEL, , >
-11 < DEL, ( >
-11 < DEL, ) >
-11 < DEL, { >
-11 < DEL, } >
-11 < DEL, [ >
-11 < DEL, ] >
-11 < DEL, . >
-12 < DEL, ( >
-12 < DEL, ; >
-12 < DEL, ) >
-12 < DEL, , >
-12 < DEL, { >
-12 < DEL, . >
-12 < DEL, . >
-12 < DEL, } >
-12 < DEL, ; >
-12 < DEL, ( >
-12 < DEL, ( >
-12 < DEL, ( >
-12 < DEL, ) >
-12 < DEL, ) >
-12 < DEL, ) >
-12 < DEL, { >
-12 < DEL, [ >
-12 < DEL, ( >
-12 < DEL, ; >
-12 < DEL, ; >
-12 < DEL, ; >
-12 < DEL, ; >
-12 < DEL, ) >
-12 < DEL, ] >
-12 < DEL, } >
+1 DEL, ;
+2 DEL, ,
+3 DEL, (
+4 DEL, )
+5 DEL, {
+6 DEL, }
+7 DEL, [
+8 DEL, ]
+9 DEL, .
+10 DEL, ;
+10 DEL, ,
+10 DEL, (
+10 DEL, )
+10 DEL, {
+10 DEL, }
+10 DEL, [
+10 DEL, ]
+10 DEL, .
+11 DEL, ;
+11 DEL, ,
+11 DEL, (
+11 DEL, )
+11 DEL, {
+11 DEL, }
+11 DEL, [
+11 DEL, ]
+11 DEL, .
+12 DEL, (
+12 DEL, ;
+12 DEL, )
+12 DEL, ,
+12 DEL, {
+12 DEL, .
+12 DEL, .
+12 DEL, }
+12 DEL, ;
+12 DEL, (
+12 DEL, (
+12 DEL, (
+12 DEL, )
+12 DEL, )
+12 DEL, )
+12 DEL, {
+12 DEL, [
+12 DEL, (
+12 DEL, ;
+12 DEL, ;
+12 DEL, ;
+12 DEL, ;
+12 DEL, )
+12 DEL, ]
+12 DEL, }
 Não foram encontrado erros neste arquivo.

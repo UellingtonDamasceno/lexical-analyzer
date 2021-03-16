@@ -1,2 +1,2 @@
-1 < BCM, /*\nteste24 - Comentário mal formado.\n*/ >
-4 < CoMF, /* this software start here!\nprocedure start{\nprint("hello world!");\n} >
+1 BCM, /*\nteste24 - Comentário mal formado.\n*/
+4 CoMF, /* this software start here!\nprocedure start{\nprint("hello world!");\n}
