@@ -35,3 +35,4 @@
 4 < LOG, ! >
 4 < LOG, ! >
 4 < LOG, ! >
+Não foram encontrado erros neste arquivo.

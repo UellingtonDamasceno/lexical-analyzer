@@ -20,6 +20,10 @@ public class Token implements Comparable<Token> {
         return this.lexame;
     }
 
+    public boolean isError() {
+        return this.type.isError();
+    }
+
     @Override
     public String toString() {
         return new StringBuilder()
@@ -36,7 +40,7 @@ public class Token implements Comparable<Token> {
     public int compareTo(Token another) {
         boolean a = this.type.isError();
         boolean b = another.type.isError();
-        
+
         return a && !b ? 1 : !a && b ? -1 : lexame.compareTo(another.lexame);
     }
 }

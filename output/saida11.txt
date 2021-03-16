@@ -76,3 +76,4 @@
 3 < IDE, x >
 3 < IDE, Y >
 3 < IDE, z >
+Não foram encontrado erros neste arquivo.

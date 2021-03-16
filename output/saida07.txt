@@ -42,3 +42,4 @@
 7 < REL, >= >
 7 < REL, = >
 7 < REL, <= >
+Não foram encontrado erros neste arquivo.

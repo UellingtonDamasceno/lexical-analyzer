@@ -10,3 +10,4 @@
 10 < REL, < >
 11 < REL, <= >
 12 < REL, = >
+Não foram encontrado erros neste arquivo.

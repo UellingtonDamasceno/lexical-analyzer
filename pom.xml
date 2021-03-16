@@ -20,6 +20,11 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>lexical.analyzer.main.Main</mainClass>
+                        </manifest>
+                    </archive> 
                 </configuration>
                 <executions>
                     <execution>

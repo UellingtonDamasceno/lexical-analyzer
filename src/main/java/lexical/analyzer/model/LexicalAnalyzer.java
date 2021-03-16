@@ -20,10 +20,12 @@ public class LexicalAnalyzer {
 
     private SourceCode sourceCode;
     private Cursor cursor;
+    private Deque<String> stack;
 
     public LexicalAnalyzer(SourceCode code) {
         this.sourceCode = code;
         this.cursor = new Cursor(code.getTextContent());
+        this.stack = new ArrayDeque(1);
     }
 
     /**
@@ -33,7 +35,6 @@ public class LexicalAnalyzer {
      */
     public SourceCode analyze() {
         List<Entry<Integer, Integer>> ocurrences = new LinkedList();
-        Deque<String> stack = new ArrayDeque(1);
         String content = sourceCode.getTextContent();
 
         Integer index = ErrorAutomaton.findInvalidBlockComment(this.cursor);
@@ -47,6 +48,7 @@ public class LexicalAnalyzer {
             this.sourceCode.getTokens().add(token);
         }
         stack.push(content);
+
         var list = ErrorAutomaton.findInvalidString(this.cursor);
         List<Token> errors = list.stream().map(entry -> {
             int start = entry.getKey();

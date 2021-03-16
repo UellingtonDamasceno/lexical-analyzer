@@ -3,16 +3,11 @@ package lexical.analyzer.model;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.function.Function;
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.summingInt;
-import static java.util.stream.Collectors.toList;
-import static java.util.stream.Collectors.toMap;
-import java.util.stream.Stream;
 
 /**
  *
@@ -34,12 +29,19 @@ public class SourceCode implements Comparable<SourceCode> {
         this.tokens = new TreeSet();
     }
 
-    public void setPath(Path path) {
-        this.path = path;
+    public boolean containsError() {
+        return this.tokens.stream()
+                .filter(Token::isError)
+                .findAny()
+                .isPresent();
     }
 
     public Set<Token> getTokens() {
-        return tokens;
+        return this.tokens;
+    }
+
+    public void setPath(Path path) {
+        this.path = path;
     }
 
     public void setTokens(Set<Token> tokens) {
