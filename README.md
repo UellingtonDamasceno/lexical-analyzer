@@ -1,12 +1,35 @@
 # Analisador léxico
 
 ## Sumário
+- [Pré-requisitos](#pré-requisitos)
+- [Instalação](#instalação)
 - [Descrição](#descrição)
 - [Estrutura Léxica](#estrutura-léxica)
 - [Entrada](#entrada)
 - [Saída](#saída)
 - [Lista de Siglas](#lista-de-siglas)
 
+
+## Pré-requisitos
+São necessários os seguintes pré-requisitos para a execução deste projeto:
+- Java 11 ou superior.
+- Maven 3.6.3 ou superior.
+
+## Instalação
+Para executar o projeto através do terminal, digite o seguinte comando 
+no diretorio raiz do projeto:
+
+    mvn clean install
+
+Em seguida acesse a pasta `target` e lá deverá conter um arquivo 
+`lexical-analyzer-1.0-SNAPSHOT-jar-with-dependencies.jar` que corresponde 
+ao executável do projeto. 
+
+Para iniciar o jar basta executar o seguinte comando:
+
+    java -jar lexical-analyzer-1.0-SNAPSHOT-jar-with-dependencies.jar
+    
+Leia a sessão [entrada](#entrada).
 
 ## Descrição
 
@@ -42,6 +65,10 @@ A entrada para este analisador é um conjunto de
 arquivos texto com os nomes entradaX.txt, onde X é um
 valor numérico que identifica cada um dos arquivos de
 entrada. 
+
+Esses arquivos devem estar obrigatóriamente em uma pasta
+`input` que por sua vez deve estar no mesmo diretório
+onde o `jar` foi executado.
 
 ## Saída
 
