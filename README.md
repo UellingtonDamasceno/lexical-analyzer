@@ -82,8 +82,10 @@ de siglas:
 | `LOG` | Operador Lógico | `(&&\|\|\|\|!(?!=))` | [:arrow_right:](https://regex101.com/r/N87Oib/1) | 
 | `ART` | Operador Aritmético | `(\*\|/)\|(\+\+?\|--?)` | [:arrow_right:](https://regex101.com/r/S15suW/1) | 
 | `CAD` | Cadeia de Caracteres | `(\"(.*?(?<!\\))\")` |[:arrow_right:](https://regex101.com/r/wOKrE0/1) |
+| `LCM` | Comentário de linha| `//.*` | [:arrow_right:](https://regex101.com/r/odF7Vo/1) |
+| `BCM` | Comentário de bloco | | - |
 
-Os _tokens_ abaixo definem os possivéis erros léxicos que o analisador é capaz de 
+Os _tokens_ abaixo definem os possíveis erros léxicos que o analisador é capaz de 
 encontrar durante a análise.
 
 | Sigla | Descrição | Regex | Teste aqui |
