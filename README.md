@@ -1,15 +1,5 @@
 # Analisador léxico
 
-## Sumário
-- [Pré-requisitos](#pré-requisitos)
-- [Instalação](#instalação)
-- [Descrição](#descrição)
-- [Estrutura Léxica](#estrutura-léxica)
-- [Entrada](#entrada)
-- [Saída](#saída)
-- [Lista de Siglas](#lista-de-siglas)
-
-
 ## Pré-requisitos
 São necessários os seguintes pré-requisitos para a execução deste projeto:
 - Java 11 ou superior.
@@ -82,17 +72,30 @@ léxico.
 _Tokens_ possuem tipos e esses tipos são representados pela seguinte tabela
 de siglas:
 
-| Sigla | Descrição | - | Sigla | Descrição |
-| :---: | --------- | :-: | :---: | --------- |
-| `PRE` | Palavra Reservada |  | `IDE` | Identificador |
-| `NRO` | Número | | `DEL` | Delimitador |
-| `REL` | Operador Relacional |  | `LOG` | Operador Lógico |
-| `ART` | Operador Aritmético |  | `SIB` | Simbolo Inválido |
-| `CMF` | Cadeia Mal Formada |  | `NMF` | Número Mal Formado |
-| `CoMF` | Comentário Mal Formado |  | `OpMF` | Operador Mal Formado |
-| `CAD` | Cadeia de Caracteres |  |  |  |
+| Sigla | Descrição | Regex | Teste aqui |
+| :---: | --------- | --- | :---: |
+| `PRE` | Palavra Reservada | Link ao lado | [:arrow_right:](https://regex101.com/r/pclNMd/1) |  
+| `IDE` | Identificador | `[a-zA-Z](\w\|_)*` | [:arrow_right:](https://regex101.com/r/6xxPQu/1) |
+| `NRO` | Número | `\d+(\.\d+)?` | [:arrow_right:](https://regex101.com/r/WctRjw/1) | 
+| `DEL` | Delimitador | `[;,\(\)\{\}\[\]\.]` | [:arrow_right:](https://regex101.com/r/2HvsoT/1) |
+| `REL` | Operador Relacional | `([=><]=?)\|!=` | [:arrow_right:](https://regex101.com/r/z0hRyx/1) |  
+| `LOG` | Operador Lógico | `(&&\|\|\|\|!(?!=))` | [:arrow_right:](https://regex101.com/r/N87Oib/1) | 
+| `ART` | Operador Aritmético | `(\*\|/)\|(\+\+?\|--?)` | [:arrow_right:](https://regex101.com/r/S15suW/1) | 
+| `CAD` | Cadeia de Caracteres | `(\"(.*?(?<!\\))\")` |[:arrow_right:](https://regex101.com/r/wOKrE0/1) |
+
+Os _tokens_ abaixo definem os possivéis erros léxicos que o analisador é capaz de 
+encontrar durante a análise.
+
+| Sigla | Descrição | Regex | Teste aqui |
+| :---: | --------- | --- | :---: |
+| `SIB` | Simbolo Inválido |  | - | 
+| `CMF` | Cadeia Mal Formada | | - |
+| `NMF` | Número Mal Formado | `\d+\.(?=[^\d])` | [:arrow_right:](https://regex101.com/r/Vl3PUd/1) |
+| `CoMF` | Comentário Mal Formado | | - |
+| `OpMF` | Operador Mal Formado | `(?<!(&\|\|))[&\|](?!(&\|\|))` | [:arrow_right:](https://regex101.com/r/dPfLux/1) |
+
 
 ----------
 
 | :arrow_left: [Problema anterior](https://github.com/UellingtonDamasceno/SGD-API) |............................... :arrow_up: [Voltar ao topo](#analisador-léxico) :arrow_up: ...............................| [Próximo problema]() :arrow_right: | 
-| :----: |-----| :-----:|   
+| :----: |-----| :-----:|
