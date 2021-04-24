@@ -1,1 +1,14 @@
-var const typedef struct extends procedure function start return if else then while read print int real boolean string true false global local
+// Teste 1 - identificadores
+var
+{
+    int var_int;
+    real r_e_a_l;
+    boolean b00lean;
+    string str1_ng;
+
+    int var_int!;
+    real _r_e_a_l;
+    boolean b@@lean;
+    string str!_ng;
+}
+teste.indentificadores

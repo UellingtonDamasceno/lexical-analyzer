@@ -1,12 +1,7 @@
-== 
-!= 
->= 
-< 
-<= 
-= 
-== 
-!= 
->= 
-< 
-<= 
-= 
+// teste 05 - token desconhecido
+
+@
+a > b ?	
+print $ 
+a = #
+6+^e

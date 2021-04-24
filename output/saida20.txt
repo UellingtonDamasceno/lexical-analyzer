@@ -1,2 +1,0 @@
-1 BCM, /*\ntestesimples\n*/
-Não foram encontrado erros neste arquivo.

@@ -1,38 +1,36 @@
-1 LOG, &&
-1 LOG, &&
-1 LOG, &&
-1 LOG, &&
-1 LOG, &&
-1 LOG, &&
-2 LOG, ||
-2 LOG, ||
-2 LOG, ||
-2 LOG, ||
-2 LOG, ||
-2 LOG, ||
-2 LOG, ||
-3 LOG, &&
-3 LOG, &&
-3 LOG, &&
-3 LOG, &&
-3 LOG, &&
-3 LOG, ||
-3 LOG, ||
-3 LOG, ||
-3 LOG, ||
-3 LOG, !
-3 LOG, !
-3 LOG, !
-3 LOG, !
-3 LOG, !
-3 LOG, !
-3 LOG, !
-4 LOG, !
-4 LOG, !
-4 LOG, !
-4 LOG, !
-4 LOG, !
-4 LOG, !
-4 LOG, !
-4 LOG, !
-Não foram encontrado erros neste arquivo.
+1 LCM, // Programa com varios erros
+2 LCM, //tabulacao no inicio de cada linha (nao eh erro)
+3 PRE, var
+4 DEL, {
+5 PRE, int
+5 IDE, a
+5 DEL, ;
+5 LCM, // identificador invalido
+6 DEL, }
+7 PRE, start
+8 DEL, {
+9 IDE, a
+9 REL, =
+9 DEL, ;
+10 IDE, a
+10 REL, =
+10 NRO, 2.2
+10 DEL, .
+10 NRO, 2
+10 DEL, ;
+10 LCM, // numero invalido ou numero, delimitador, numero
+11 IDE, se
+11 DEL, (
+11 DEL, )
+12 DEL, {
+13 IDE, x
+13 REL, =
+13 IDE, a
+13 DEL, ;
+13 LCM, // operador mal formado
+14 DEL, }
+5 SIB, ?
+9 SIB, %
+11 SIB, ?
+13 SIB, ?
+15 CoMF, /* Comentario nao finalizado;\n}

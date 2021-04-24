@@ -1,24 +1,33 @@
-1 PRE, var
-2 PRE, const
-3 PRE, typedef
-3 PRE, struct
-3 PRE, extends
-4 PRE, procedure
-4 PRE, function
-4 PRE, start
-5 PRE, return
-5 PRE, if
-5 PRE, else
-5 PRE, then
-6 PRE, while
-6 PRE, read
-6 PRE, print
-6 PRE, int
-6 PRE, real
-6 PRE, boolean
-6 PRE, string
-7 PRE, true
-7 PRE, false
-8 PRE, global
-8 PRE, local
-Não foram encontrado erros neste arquivo.
+1 LCM, // Testes de comentario
+2 PRE, var
+3 DEL, {
+4 PRE, int
+4 IDE, a
+4 DEL, ;
+5 PRE, int
+5 IDE, x
+5 DEL, ;
+6 LCM, // 	real //s	;
+7 PRE, real
+7 IDE, b
+7 DEL, ;
+8 DEL, }
+9 PRE, start
+10 DEL, {
+11 BCM, /*\ns = -1.3;	**/
+13 IDE, b
+13 REL, =
+13 BCM, /* numero real */
+13 NRO, 1.2
+13 DEL, ;
+14 IDE, a
+14 REL, =
+14 LCM, // /*-1;
+15 IDE, b
+15 REL, =
+15 NRO, 5
+15 DEL, ;
+15 ART, *
+15 ART, /
+15 SIB, $
+16 CoMF, /*\n}

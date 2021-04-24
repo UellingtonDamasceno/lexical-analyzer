@@ -1,49 +1,45 @@
-1 NRO, 1
-2 NRO, 12
-3 NRO, 123.0
-4 NRO, 0
-4 NRO, 1
-4 NRO, 2
-4 NRO, 3
-4 NRO, 4
-4 NRO, 5
-4 NRO, 6
-4 NRO, 7
-4 NRO, 8
-4 NRO, 9
-5 NRO, 0123456789
-6 NRO, 0.0
-6 NRO, 0.1
-6 NRO, 0.2
-6 NRO, 0.3
-6 NRO, 0.4
-6 NRO, 0.5
-6 NRO, 0.6
-6 NRO, 0.7
-6 NRO, 0.8
-6 NRO, 0.9
-7 NRO, 1.10
-7 NRO, 1.20
-7 NRO, 1.30
-7 NRO, 1.40
-7 NRO, 1.50
-7 NRO, 1.60
-7 NRO, 1.70
-7 NRO, 1.80
-7 NRO, 1.90
-8 NRO, 10.10
-8 NRO, 20.20
-8 NRO, 30.30
-8 NRO, 40.40
-8 NRO, 50.50
-8 NRO, 60.60
-8 NRO, 70.70
-8 NRO, 80.80
-8 NRO, 90.90
-9 DEL, .
-9 NRO, 5.15
-9 DEL, .
-9 NRO, 64.4654
-9 DEL, .
-9 NRO, 6546
+1 LCM, // Programa sem erros - Testando tudo que a linguagem aceita
+2 LCM, //Palavras reservadas algoritmo variaveis constantes registro funcao retorno vazio se senao enquanto para leia escreva inteiro real booleano char cadeia verdadeiro falso
+3 LCM, //Identificadores validos
+4 IDE, num1
+4 IDE, todos_tutores
+4 IDE, soma
+4 IDE, q123
+5 LCM, //Numeros validos
+6 NRO, 123
+6 NRO, 1.2
+6 NRO, 23.987
+7 LCM, //Cadeias de caracteres
+8 CAD, "texto correto"
+8 CAD, "@#$:^&*"
+9 LCM, //Operadores
+10 ART, +
+10 ART, -
+10 ART, *
+10 ART, /
+10 ART, ++
+10 ART, --
+10 REL, ==
+10 REL, !=
+10 REL, >
+10 REL, >=
+10 REL, <
+10 REL, <=
+10 REL, =
+10 LOG, &&
+10 LOG, ||
+10 LOG, !
+11 LCM, //Delimitadores
+12 DEL, ;
+12 DEL, ,
+12 DEL, (
+12 DEL, )
+12 DEL, {
+12 DEL, }
+12 DEL, [
+12 DEL, ]
+12 DEL, .
+13 LCM, //Comentarios validos
+14 BCM, /* isto é um comentário de bloco */
+15 LCM, // isto é um comentário de linha
 Não foram encontrado erros neste arquivo.

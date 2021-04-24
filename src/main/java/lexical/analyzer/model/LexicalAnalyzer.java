@@ -36,6 +36,29 @@ public class LexicalAnalyzer {
     public SourceCode analyze() {
         List<Entry<Integer, Integer>> ocurrences = new LinkedList();
         String content = sourceCode.getTextContent();
+        stack.push(content);
+
+        ErrorAutomaton.findLineComment(cursor)
+                .forEach((pos) -> {
+                    String text = stack.pop();
+
+                    Integer key = pos.getKey();
+                    Integer value = pos.getValue();
+
+                    Entry<Integer, Integer> start = cursor.getPosition(key);
+
+                    String lineComment = text.substring(key, value);
+
+                    Lexame lexame = new Lexame(lineComment, start.getKey(), start.getValue());
+                    Token token = new Token(TokenType.LINE_COMMENT, lexame);
+                    
+                    text = Cursor.replaceOccurence(text, pos.getKey(), pos.getValue(), ' ');
+                    
+                    this.sourceCode.getTokens().add(token);
+                    stack.push(text);
+                });
+
+        content = stack.pop();
 
         Integer index = ErrorAutomaton.findInvalidBlockComment(this.cursor);
 

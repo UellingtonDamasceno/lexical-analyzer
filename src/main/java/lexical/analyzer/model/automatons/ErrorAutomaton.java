@@ -78,4 +78,31 @@ public class ErrorAutomaton {
         }
         return errors;
     }
+
+    public static List<Entry<Integer, Integer>> findLineComment(Cursor cursor) {
+        List<Entry<Integer, Integer>> occurences = new LinkedList();
+        char current, next;
+        boolean hasValueMemory = false;
+        int start;
+
+        while (cursor.hasNext()) {
+            current = cursor.current();
+            next = cursor.next();
+
+            if (current == '/' && next == '*' && !hasValueMemory) {
+                cursor.pushPosition();
+                hasValueMemory = true;
+            } else if (current == '*' && next == '/' && hasValueMemory) {
+                cursor.popPosition();
+                hasValueMemory = false;
+            } else if (current == '/' && next == '/' && !hasValueMemory) {
+                start = cursor.getIndex() - 1;
+                while(cursor.getColumn() != 1 && cursor.hasNext()){
+                    cursor.next();
+                }
+                occurences.add(Map.entry(start, cursor.getIndex()));
+            }
+        }
+        return occurences;
+    }
 }

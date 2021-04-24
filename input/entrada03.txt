@@ -1,23 +1,20 @@
-   
-    
-     
-       var
-const     
-typedef       struct      extends
-     procedure      function   start 
+// Testes de comentario
 
+var
+{
+	int a;
+	int x;
+	// 	real //s	;	
+	real b;
+}
+start
+{	
+	/*
+	s = -1.3;	**/
+	b = /* numero real */ 1.2;
+	a = // /*-1;
+	b = 5$;	*/
 
-    
- 
+	/* 
 
-return if else              then
-while read    print    int real     boolean     string
-                                       true false
-global         local
-
-
-
-
-
-
-
+}
