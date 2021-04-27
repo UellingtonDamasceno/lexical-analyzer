@@ -8,6 +8,7 @@ import lexical.analyzer.model.Token;
  * @author Antonio Neto e Uellington Damasceno
  */
 public enum TokenType {
+    ERROR_SYNTATICAL("SYN_ERROR", true),
     BLOCK_COMMENT("BCM"),
     LINE_COMMENT("LCM"),
     STRING("CAD"),

@@ -47,10 +47,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            File outputDirectory = new File("./output");
-            if (!outputDirectory.exists()) {
-                outputDirectory.mkdir();
-            }
+            FilesUtil.createIfNotExists("./output");
             Pattern pattern = Pattern.compile(FilesUtil.regexInputFileFilter);
             FilesUtil.readAllFiles(Path.of("./input"), pattern)
                     .entrySet()

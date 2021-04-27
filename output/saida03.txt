@@ -1,33 +1,33 @@
 1 LCM, // Testes de comentario
-2 PRE, var
-3 DEL, {
-4 PRE, int
-4 IDE, a
-4 DEL, ;
+3 PRE, var
+4 DEL, {
 5 PRE, int
-5 IDE, x
+5 IDE, a
 5 DEL, ;
-6 LCM, // 	real //s	;
-7 PRE, real
-7 IDE, b
-7 DEL, ;
-8 DEL, }
-9 PRE, start
-10 DEL, {
-11 BCM, /*\ns = -1.3;	**/
-13 IDE, b
-13 REL, =
-13 BCM, /* numero real */
-13 NRO, 1.2
-13 DEL, ;
-14 IDE, a
+6 PRE, int
+6 IDE, x
+6 DEL, ;
+7 LCM, // 	real //s	;	
+8 PRE, real
+8 IDE, b
+8 DEL, ;
+9 DEL, }
+10 PRE, start
+11 DEL, {
+12 BCM, /*\n	s = -1.3;	**/
+14 IDE, b
 14 REL, =
-14 LCM, // /*-1;
-15 IDE, b
+14 BCM, /* numero real */
+14 NRO, 1.2
+14 DEL, ;
+15 IDE, a
 15 REL, =
-15 NRO, 5
-15 DEL, ;
-15 ART, *
-15 ART, /
-15 SIB, $
-16 CoMF, /*\n}
+15 LCM, // /*-1;
+16 IDE, b
+16 REL, =
+16 NRO, 5
+16 DEL, ;
+16 ART, *
+16 ART, /
+16 SIB, $
+18 CoMF, /* \n\n}

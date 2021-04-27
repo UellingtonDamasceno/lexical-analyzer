@@ -81,4 +81,10 @@ public class FilesUtil {
         }
     }
 
+    public static void createIfNotExists(String dir) {
+        File outputDirectory = new File(dir);
+        if (!outputDirectory.exists()) {
+            outputDirectory.mkdir();
+        }
+    }
 }

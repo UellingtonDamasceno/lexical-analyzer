@@ -1,36 +1,36 @@
 1 LCM, // Programa com varios erros
 2 LCM, //tabulacao no inicio de cada linha (nao eh erro)
-3 PRE, var
-4 DEL, {
-5 PRE, int
-5 IDE, a
-5 DEL, ;
-5 LCM, // identificador invalido
-6 DEL, }
-7 PRE, start
-8 DEL, {
-9 IDE, a
-9 REL, =
-9 DEL, ;
+4 PRE, var
+5 DEL, {
+6 PRE, int
+6 IDE, a
+6 DEL, ;
+6 LCM, // identificador invalido
+7 DEL, }
+8 PRE, start
+9 DEL, {
 10 IDE, a
 10 REL, =
-10 NRO, 2.2
-10 DEL, .
-10 NRO, 2
 10 DEL, ;
-10 LCM, // numero invalido ou numero, delimitador, numero
-11 IDE, se
-11 DEL, (
-11 DEL, )
-12 DEL, {
-13 IDE, x
-13 REL, =
-13 IDE, a
-13 DEL, ;
-13 LCM, // operador mal formado
-14 DEL, }
-5 SIB, ?
-9 SIB, %
-11 SIB, ?
+11 IDE, a
+11 REL, =
+11 NRO, 2.2
+11 DEL, .
+11 NRO, 2
+11 DEL, ;
+11 LCM, // numero invalido ou numero, delimitador, numero 
+13 IDE, se
+13 DEL, (
+13 DEL, )
+14 DEL, {
+15 IDE, x
+15 REL, =
+15 IDE, a
+15 DEL, ;
+15 LCM, // operador mal formado
+16 DEL, }
+6 SIB, ?
+10 SIB, %
 13 SIB, ?
-15 CoMF, /* Comentario nao finalizado;\n}
+15 SIB, ?
+17 CoMF, /* Comentario nao finalizado;\n	}

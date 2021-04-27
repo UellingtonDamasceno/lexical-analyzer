@@ -1,45 +1,45 @@
 1 LCM, // Programa sem erros - Testando tudo que a linguagem aceita
-2 LCM, //Palavras reservadas algoritmo variaveis constantes registro funcao retorno vazio se senao enquanto para leia escreva inteiro real booleano char cadeia verdadeiro falso
-3 LCM, //Identificadores validos
-4 IDE, num1
-4 IDE, todos_tutores
-4 IDE, soma
-4 IDE, q123
-5 LCM, //Numeros validos
-6 NRO, 123
-6 NRO, 1.2
-6 NRO, 23.987
-7 LCM, //Cadeias de caracteres
-8 CAD, "texto correto"
-8 CAD, "@#$:^&*"
-9 LCM, //Operadores
-10 ART, +
-10 ART, -
-10 ART, *
-10 ART, /
-10 ART, ++
-10 ART, --
-10 REL, ==
-10 REL, !=
-10 REL, >
-10 REL, >=
-10 REL, <
-10 REL, <=
-10 REL, =
-10 LOG, &&
-10 LOG, ||
-10 LOG, !
-11 LCM, //Delimitadores
-12 DEL, ;
-12 DEL, ,
-12 DEL, (
-12 DEL, )
-12 DEL, {
-12 DEL, }
-12 DEL, [
-12 DEL, ]
-12 DEL, .
-13 LCM, //Comentarios validos
-14 BCM, /* isto é um comentário de bloco */
-15 LCM, // isto é um comentário de linha
+3 LCM, //Palavras reservadas algoritmo variaveis constantes registro funcao retorno vazio se senao enquanto para leia escreva inteiro real booleano char cadeia verdadeiro falso
+6 LCM, //Identificadores validos
+8 IDE, num1
+8 IDE, todos_tutores
+8 IDE, soma
+8 IDE, q123
+10 LCM, //Numeros validos
+12 NRO, 123
+12 NRO, 1.2
+12 NRO, 23.987
+14 LCM, //Cadeias de caracteres
+16 CAD, "texto correto"
+16 CAD, "@#$:^&*"
+18 LCM, //Operadores
+20 ART, +
+20 ART, -
+20 ART, *
+20 ART, /
+20 ART, ++
+20 ART, --
+20 REL, ==
+20 REL, !=
+20 REL, >
+20 REL, >=
+20 REL, <
+20 REL, <=
+20 REL, =
+20 LOG, &&
+20 LOG, ||
+20 LOG, !
+22 LCM, //Delimitadores
+24 DEL, ;
+24 DEL, ,
+24 DEL, (
+24 DEL, )
+24 DEL, {
+24 DEL, }
+24 DEL, [
+24 DEL, ]
+24 DEL, .
+26 LCM, //Comentarios validos
+28 BCM, /* isto é um comentário de bloco */
+29 LCM, // isto é um comentário de linha
 Não foram encontrado erros neste arquivo.

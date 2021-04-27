@@ -8,12 +8,16 @@ import lexical.analyzer.enums.TokenType;
  */
 public class Token implements Comparable<Token> {
 
-    private TokenType type;
-    private Lexame lexame;
+    protected TokenType type;
+    protected Lexame lexame;
 
     public Token(TokenType type, Lexame lexame) {
         this.type = type;
         this.lexame = lexame;
+    }
+
+    public TokenType getType() {
+        return type;
     }
 
     public Lexame getLexame() {
@@ -22,6 +26,10 @@ public class Token implements Comparable<Token> {
 
     public boolean isError() {
         return this.type.isError();
+    }
+
+    public boolean thisLexameIs(String lexame) {
+        return this.lexame.getLexame().equals(lexame);
     }
 
     @Override
